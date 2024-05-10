@@ -1,0 +1,291 @@
+/* body {
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+  }
+
+  small {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.4);
+  }
+
+  .center {
+	text-align: center;
+  } */
+
+/* NAVIGATION */
+/* nav {
+  width: 50%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1px;
+  box-shadow: 0px 5px 0px #dedede;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: black;
+} */
+
+
+/* stroke */
+/* nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #E01218;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+nav.fill ul li a:hover {
+  color: #fff;
+  z-index: 1;
+}
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+} */
+/*MY CSS*/
+
+body
+{
+	background-color:#0088ff;
+	font-family:'Roboto', sans-serif;
+	text-align:center;
+	font-weight:bold;
+ 
+}
+
+.navbar {
+  background: linear-gradient(to right, #2262B3, #261446);
+  padding: 5px;
+  text-align: center;
+}
+#mainNav {
+  font-size: 5px;
+  display: flex;
+  justify-content: center;
+}
+/*CSS3 STROKE EFFECT*/
+#mainNav ul {
+  list-style: none;
+  margin:0;
+  font-size: 15px;
+  padding: 14px 16px;
+}
+#mainNav ul li {
+  display: inline-block;
+	display:inline;
+	margin: 10px;
+}
+#mainNav ul li a {
+  padding-bottom: 5px;
+  text-decoration: none;
+  color:#E34F25;
+}
+#mainNav ul li a,
+#mainNav ul li a:after,
+#mainNav ul li a:before {
+  transition: all .5s;
+}
+#mainNav ul li a:hover {
+  color:#E34F25;
+}
+
+/* stroke */
+#mainNav.stroke ul li a
+{
+  position: relative;
+}
+#mainNav.stroke ul li a:after,
+#mainNav ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #E34F25;
+  height: 1px;
+}
+#mainNav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+#mainNav ul li a {
+  transition: all 1s;
+}
+
+#mainNav ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+#mainNav ul li a:hover {
+  color: #E34F25;
+  z-index: 1;
+}
+#mainNav ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  opacity: 1;
+}
+
+
+/* Gaya menu utama */
+.dropdown li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* Gaya submenu */
+.dropdown .submenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown li:hover .submenu {
+  display: block;
+}
+
+.navbottom {
+  background: #331a5d;
+  /* Warna latar belakang polos */
+  text-align: center;
+  padding: 0px;
+  font-size: 13px;
+  
+}
+
+.navbottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbottom ul li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.navbottom ul li a {
+  text-decoration: none;
+  color:#fff;
+  /* Teks berwarna putih */
+}
+
+.navbottom ul li a:hover {
+  color: #E34F25;
+    z-index: 1;
+}
+
+.search {
+  margin-left: auto;
+  /* Dorong item ini ke ujung kanan */
+}
+
+.search-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-button {
+  padding: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  color: #E34F25;
+  /* Warna saat hover */
+}
+/* .img{
+  background-image: url(img\logoperusahaan.png);
+  width: 30%;
+  height: 30%;
+} */
+
+/* .dropdown {
+  justify-content: flex;
+  overflow: hidden;
+} */
+/* 
+#mainNav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+#mainNav .dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: start;
+}
+
+#mainNav .dropdown-content a:hover {
+  background-color: #E34F25;
+}
+
+#mainNav .dropdown:hover .dropdown-content {
+  display: block;
+} */

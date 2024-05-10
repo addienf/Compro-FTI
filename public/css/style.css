@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Kemahasiswaan */
+.header-img2{
+    display: block;
+    width: 100%;
+    height: 35%;
+}
+
+.options-container{
+    margin: 3em 0 4em 5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1em;
+    text-align: center;
+}
+
+.options{
+    background-color: #EEEAF5;
+    border: none;
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+    border-radius: 0.5em;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+}
+
+.options1{
+    background-color: #331A5D;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+    border-radius: 0.5em;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+}
+
+/* .card-container{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.news-card{
+    width: 325px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.card-img{
+    width: 100%;
+    height: auto;
+}
+
+.content-card{
+    padding: 16px;
+}
+
+.content-card h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-text{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.btn-view{
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #EB890A;
+} */
+
+.card-container{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5em;
+}
+
+.card{
+    display: grid;
+    position: relative;
+    grid-template-columns: auto 1fr;
+    box-shadow: 0 0 15px rgba(85, 85, 85, 0.2);
+    margin: 1em 0;
+    border-radius: 15px;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 15px;
+}
+
+.card-title{
+    font-weight: 600;
+    color: #0b0028;
+}
+
+.card-text{
+    color: #6f6f6f;
+    text-align: justify;
+    margin: 0.8em 0 1em 0;
+}
+
+.btn-view{
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    color: #EB890A;
+    width: 9em;
+    text-align: center;
+    padding: 0.3em 0.2em;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1100px){
+    .card-container{
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 1em;
+    }
+
+    .card-container-prestasi{
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 1em;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .card-container{
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 1em;
+    }
+
+    .options-container{
+        display: flex;
+        justify-content: start;
+        text-align: center;
+        gap: 5em;
+    }
+}
