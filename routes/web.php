@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('content.home');
+});
+
+Route::get('/berita', function () {
+    return view('content.dashboard-berita');
+});
+
+Route::get('/berita-d', function () {
+    return view('content.berita-detail');
+});
+
+Route::get('/fakultas', function () {
+    return view('content.dashboard-vismis');
+});
