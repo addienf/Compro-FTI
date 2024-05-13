@@ -171,3 +171,116 @@
         gap: 5em;
     }
 }
+
+/*Akademik*/
+
+.options-container-akademik {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.akademik {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px;
+    /* background-color: #666; */
+    margin-bottom: -20px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 35em;
+    text-align: start;
+}
+
+.jadwal {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    align-items: center;
+    padding: 5px;
+    /* background-color: #666; */
+    margin-bottom: -20px;
+    margin-top: 20px;
+    margin-left: 170px;
+}
+
+.ujian {
+    padding: 100px;
+    background-color: whitesmoke;
+    margin-bottom: -20px;
+    margin-top: 20px;
+    margin-left: 170px;
+    margin-right: 150px;
+    box-shadow: 0 15px 15px rgba(131, 130, 130, 0.2);
+}
+
+.kalender {
+    padding: 100px;
+    background-color: whitesmoke;
+    margin-bottom: -20px;
+    margin-top: 20px;
+    margin-left: 170px;
+    margin-right: 150px;
+    box-shadow: 0 15px 15px rgba(131, 130, 130, 0.2);
+}
+
+.bijak {
+    padding: 100px;
+    background-color: whitesmoke;
+    margin-bottom: -20px;
+    margin-top: 20px;
+    margin-left: 170px;
+    margin-right: 150px;
+    box-shadow: 0 15px 15px rgba(131, 130, 130, 0.2);
+}
+
+.card-container-akademik {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: -15px;
+    justify-items: center;
+}
+
+.card-akademik {
+    position: relative;
+    display: grid;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(131, 130, 130, 0.2);
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em;
+    background-color: rgba(235, 137, 10, 0.5);
+    height: 100%;
+    /* Menambahkan latar belakang semi-transparan untuk judul dan teks */
+}
+
+.card-text-akademik {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    font-weight: bold;
+}
+
+.card-little-akademik {
+
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+
+}
