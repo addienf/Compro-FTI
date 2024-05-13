@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/akademik', function () {
     return view('akademik');
 });
+
+Route::get('/akademik2', function () {
+    return view('akademik2');
+});

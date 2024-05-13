@@ -12,12 +12,12 @@
         </div>
         <div class="akademik"> Program Sarjana </div>
         <div class="options-container-akademik">
-            <a href="{{ url('') }}"><button class="options1">Sarjana</button></a>
-            <a href="{{ url('') }}"><button class="options">Pasca Sarjana</button></a>
+            <a href="{{ url('akademik') }}"><button class="options1">Sarjana</button></a>
+            <a href="{{ url('akademik2') }}"><button class="options">Pasca Sarjana</button></a>
         </div>
         <div class="card-container-akademik">
             <div class="card-akademik" style="width: 18rem;">
-                <img src="{{ asset('img\exp1.png') }}" class="card-img-top" alt="...">
+                <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
                 <div class="card-content">
                     <p class="card-text-akademik">Baik Sekali</p>
                     <div class="card-little-akademik">Program Studi Teknik Elektro</div>
@@ -65,7 +65,6 @@
         <div class="kalender"> </div>
         <div class="akademik"> Kebijakan dan Peraturan Akademik</div>
         <div class="bijak"> </div>
-
     </div>
 
 @endsection
