@@ -246,6 +246,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: -15px;
     justify-items: center;
+    /* background-color: gray; */
 }
 
 .card-akademik {
@@ -255,6 +256,7 @@
     box-shadow: 0 20px 20px rgba(131, 130, 130, 0.2);
     overflow: hidden;
     margin-bottom: 60px;
+    /* background-color: aqua; */
 }
 
 .card-content {
@@ -284,3 +286,16 @@
     margin-top: 30px;
 
 }
+
+.card-container-akademik2 {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: -5px;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 380px;
+    /* background-color: gray; */
+}
+
+
