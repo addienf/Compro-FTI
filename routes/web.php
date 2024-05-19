@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/akademik', function () {
+Route::get('/Akademik', function () {
     return view('akademik');
 });
 

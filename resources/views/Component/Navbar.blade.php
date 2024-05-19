@@ -7,7 +7,7 @@
     <img src="img\itenass.png" width="100px" height="25px"alt="Logo image" />
     <ul>
         <li><a href="#">Profil</a></li>
-        <li><a href="#">Akademik</a></li>
+        <li><a href="{{ url('Akademik') }}">Akademik</a></li>
         <li><a href="{{ url('KegiatanMahasiswa') }}">Kemahasiswaan</a></li>
         <li><a href="#">MBKM</a></li>
         <li><a href="#">Tracer Study</a></li>
