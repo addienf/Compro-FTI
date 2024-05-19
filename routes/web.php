@@ -20,3 +20,24 @@ Route::get('/', function () {
 Route::get('/akademik', function () {
     return view('akademik');
 });
+
+// Kemahasiswaan
+Route::get('/KegiatanMahasiswa', function () {
+    return view('Content.KegiatanMahasiswa');
+});
+
+Route::get('/PrestasiMahasiswa', function () {
+    return view('Content.PrestasiMahasiswa');
+});
+
+Route::get('/Lomba', function () {
+    return view('Content.Lomba');
+});
+
+Route::get('/Penelitian', function () {
+    return view('Content.Penelitian');
+});
+
+Route::get('/PKM', function () {
+    return view('Content.PKM');
+});

@@ -8,7 +8,7 @@
     <ul>
         <li><a href="#">Profil</a></li>
         <li><a href="#">Akademik</a></li>
-        <li><a href="#">Kemahasiswaan</a></li>
+        <li><a href="{{ url('KegiatanMahasiswa') }}">Kemahasiswaan</a></li>
         <li><a href="#">MBKM</a></li>
         <li><a href="#">Tracer Study</a></li>
         <li><a href="#">Kerjasama</a></li>
@@ -17,8 +17,8 @@
 </div>
 <div class="navbottom stroke">
     <ul>
-        <li><a href="#home">Penelitian</a></li>
-        <li><a href="#about">PKM</a></li>
+        <li><a href="{{ url('Penelitian') }}">Penelitian</a></li>
+        <li><a href="{{ url('PKM') }}">PKM</a></li>
         <li><a href="#contact">Publikasi</a></li>
         <li><a href="#contact">Penjaminan Mutu</a></li>
     </ul>
