@@ -63,3 +63,8 @@ Route::get('/Penelitian', function () {
 Route::get('/PKM', function () {
     return view('Content.PKM');
 });
+
+// Tracer Studi
+Route::get('/Tracer', function () {
+    return view('Content.tracer_study');
+});
