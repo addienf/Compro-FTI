@@ -18,21 +18,22 @@ Route::get('/', function () {
 });
 
 // Landing & Berita
-Route::get('/home', function () {
-    return view('content.home');
+Route::get('/Home', function () {
+    return view('Content.home');
 });
 
-Route::get('/berita', function () {
-    return view('content.dashboard-berita');
+Route::get('/Berita', function () {
+    return view('Content.dashboard-berita');
 });
 
-Route::get('/berita-d', function () {
-    return view('content.berita-detail');
+Route::get('/Berita-d', function () {
+    return view('Content.berita-detail');
 });
 
-Route::get('/fakultas', function () {
-    return view('content.dashboard-vismis');
-  
+Route::get('/Fakultas', function () {
+    return view('Content.dashboard-vismis');
+});
+
 Route::get('/Akademik', function () {
     return view('akademik');
 });
@@ -56,5 +57,4 @@ Route::get('/Penelitian', function () {
 
 Route::get('/PKM', function () {
     return view('Content.PKM');
-
 });
