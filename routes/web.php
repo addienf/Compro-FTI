@@ -34,6 +34,11 @@ Route::get('/Fakultas', function () {
     return view('Content.dashboard-vismis');
 });
 
+// Akademik
+Route::get('/akademik2', function () {
+    return view('akademik2');
+});
+
 Route::get('/Akademik', function () {
     return view('akademik');
 });
