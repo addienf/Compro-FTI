@@ -63,3 +63,19 @@ Route::get('/Penelitian', function () {
 Route::get('/PKM', function () {
     return view('Content.PKM');
 });
+
+Route::get('/tracer', function () {
+    return view('tracer_study');
+});
+
+Route::get('/publikasi', function () {
+    return view('publikasi');
+});
+
+Route::get('/penjamin', function () {
+    return view('penjamin_mutu');
+});
+
+Route::get('/dokumen', function () {
+    return view('dokumen');
+});
