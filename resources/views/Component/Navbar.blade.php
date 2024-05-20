@@ -11,7 +11,7 @@
         <li><a href="{{ url('KegiatanMahasiswa') }}">Kemahasiswaan</a></li>
         <li><a href="#">MBKM</a></li>
         <li><a href="#">Tracer Study</a></li>
-        <li><a href="#">Kerjasama</a></li>
+        <li><a href="{{ url('Kerjasama') }}">Kerjasama</a></li>
         <li><a href="#">Dokumen</a></li>
     </ul>
 </div>
