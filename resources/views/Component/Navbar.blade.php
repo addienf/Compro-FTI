@@ -9,7 +9,7 @@
         <li><a href="#">Profil</a></li>
         <li><a href="{{ url('Akademik') }}">Akademik</a></li>
         <li><a href="{{ url('KegiatanMahasiswa') }}">Kemahasiswaan</a></li>
-        <li><a href="#">MBKM</a></li>
+        <li><a href="{{ url('PMM') }}">MBKM</a></li>
         <li><a href="#">Tracer Study</a></li>
         <li><a href="{{ url('Kerjasama') }}">Kerjasama</a></li>
         <li><a href="#">Dokumen</a></li>
