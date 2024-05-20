@@ -68,3 +68,8 @@ Route::get('/PKM', function () {
 Route::get('/Tracer', function () {
     return view('Content.tracer_study');
 });
+
+// MBKM
+Route::get('/PMM', function () {
+    return view('Content.PMM1');
+});
