@@ -12,6 +12,7 @@
     margin: auto;
     width: 100%;
     height: 430px;
+    object-fit: cover;
 }
 
 .dropdown{

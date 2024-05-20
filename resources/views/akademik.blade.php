@@ -2,6 +2,7 @@
 @section('title', 'Akademik')
 <link rel="stylesheet" href="{{ asset('css\style.css') }}">
 @section('content')
+    @include('Component.Navbar')
     <div class="body">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -66,5 +67,5 @@
         <div class="akademik"> Kebijakan dan Peraturan Akademik</div>
         <div class="bijak"> </div>
     </div>
-
+    @include('Component.Footer')
 @endsection

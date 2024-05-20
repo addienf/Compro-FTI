@@ -39,6 +39,10 @@ Route::get('/akademik2', function () {
     return view('akademik2');
 });
 
+Route::get('/Kerjasama', function () {
+    return view('Content.Kerjasama');
+});
+
 Route::get('/Akademik', function () {
     return view('akademik');
 });
