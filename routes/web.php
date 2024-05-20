@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -37,6 +37,10 @@ Route::get('/Fakultas', function () {
 // Akademik
 Route::get('/akademik2', function () {
     return view('akademik2');
+});
+
+Route::get('/Kerjasama', function () {
+    return view('Content.Kerjasama');
 });
 
 Route::get('/Akademik', function () {
@@ -64,6 +68,12 @@ Route::get('/PKM', function () {
     return view('Content.PKM');
 });
 
-Route::get('/Kerjasama', function () {
-    return view('Content.Kerjasama');
+// Tracer Studi
+Route::get('/Tracer', function () {
+    return view('Content.tracer_study');
+});
+
+// MBKM
+Route::get('/PMM', function () {
+    return view('Content.PMM1');
 });

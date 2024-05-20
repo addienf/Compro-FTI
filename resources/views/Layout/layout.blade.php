@@ -28,12 +28,8 @@
     {{-- @yield('style') --}}
     <link rel = "stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-
     <link rel = "stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
-
 </head>
-
-
 <body>
     @yield('content')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
