@@ -125,16 +125,27 @@
             /* Atas, kanan, bawah, kiri */
         }
 
-        .ts {
-            text-align: center;
-            font-family: "Hind Guntur", Arial, sans-serif;
+        .box4 {
+            color: white;
+            border-radius: 5px;
+            margin: 35px 85px 35px 72px;
+            /* Atas, kanan, bawah, kiri */
+        }
+
+        #baru {
+            width: 500px;
+            ont-family: "Hind Guntur", Arial, sans-serif;
             font-weight: bold;
-            font-size: 40px;
+            font-size: 32px;
             background: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            margin-right: 350px;
-            margin-left: 350px;
-            border-radius: 10px;
+        }
+
+        .wrapper {
+            color: black;
+            text-align: center;
+            margin:
+
         }
 
 
@@ -156,17 +167,17 @@
         }
 
         .table1 {
-          text-align: center;
-          background: #133765;
-          color: white;
-          height: 80px;
-          width: 1100px;
-          margin-right: 500px;
-      }
+            text-align: center;
+            background: #133765;
+            color: white;
+            height: 80px;
+            width: 1100px;
+            margin-right: 500px;
+        }
 
 
         td,
-        th {
+        th * {
             text-align: center;
             font-family: "Source Sans", Arial, sans-serif;
             font-size: 20px;
@@ -174,26 +185,26 @@
             height: 30px;
         }
 
-        .sss{
-          background: #EB890A;
-          border-radius: 100px;
+        .sss {
+            background: #EB890A;
+            border-radius: 100px;
         }
 
-        .trke1{
-          padding: 20px;
+        .trke1 {
+            padding: 20px;
         }
-
     </style>
 
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="ts">
-            Testimoni Alumni
+    <div class="container" id="baru">
+        <div class="wrapper">
+            <p>Testimoni Alumni</p>
         </div>
     </div>
+
 
     <div class="container">
         <div class="row">
@@ -258,7 +269,6 @@
         </div>
     </div>
 
-
     <!-- Data Lulusan Section -->
     <section class="data-lulusan">
         <div class="container">
@@ -268,6 +278,7 @@
         </div>
 
         <!-- Judul -->
+        <div class="container-fluid"></div>
         <div class="container">
             <div class="box">
                 <div class="row title">
@@ -295,66 +306,89 @@
             </div>
         </div>
 
-        <!-- Konten -->
-        
-
         <div class="container">
-            <div class="box1">
-                <div class="row">
-                    <div class="col text-center">
-                        2
+            <div class="box">
+                <div class="row title">
+                    <div class="box4">
+                        <div class="col-md-auto">
+                            1
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        Awalidzan
+                    <div class="box4">
+                        <div class="col text-center">
+                            Zidan Chosyiyar
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        Sistem Informasi
+                    <div class="box4">
+                        <div class="col text-center">
+                            Sistem Informasi
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        Tokopedia
+                    <div class="box4">
+                        <div class="col text-center">
+                            Shoppe Indonesia
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
+        <div class="container-fluid"></div>
         <div class="container">
-          <div class="box1">
-              <div class="row">
-                  <div class="col text-center">
-                      2
-                  </div>
-                  <div class="col text-center">
-                      Awalidzan
-                  </div>
-                  <div class="col text-center">
-                      Sistem Informasi
-                  </div>
-                  <div class="col text-center">
-                      Tokopedia
-                  </div>
-              </div>
-          </div>
-      </div>
-
-        <div class="container">
-            <div class="box1">
-                <div class="row">
-                    <div class="col text-center">
-                        <td>1</td>
+            <div class="box">
+                <div class="row title">
+                    <div class="box4">
+                        <div class="col-md-auto">
+                            2
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        <td>Gagaz</td>
+                    <div class="box4">
+                        <div class="col text-center">
+                            Fauzan Addien
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        Sistem Informasi
+                    <div class="box4">
+                        <div class="col text-center">
+                            Teknik Mesin
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        Shopee
+                    <div class="box4">
+                        <div class="col text-center">
+                            Dirgantara
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+
+        <div class="container-fluid"></div>
+        <div class="container">
+            <div class="box">
+                <div class="row title">
+                    <div class="box4">
+                        <div class="col-md-auto">
+                            3
+                        </div>
+                    </div>
+                    <div class="box4">
+                        <div class="col text-center">
+                            Awalidzan Ahda
+                        </div>
+                    </div>
+                    <div class="box4">
+                        <div class="col text-center">
+                            Informatika
+                        </div>
+                    </div>
+                    <div class="box4">
+                        <div class="col text-center">
+                            Tokopedia Indonesia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 </body>
 
