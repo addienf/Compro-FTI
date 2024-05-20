@@ -34,8 +34,8 @@ Route::get('/fakultas', function () {
     return view('content.dashboard-vismis');
 });
 
-Route::get('/Akademik', function () {
-    return view('akademik');
+Route::get('/akademik', function () {
+    return view('content.akademik');
 });
 
 // Kemahasiswaan

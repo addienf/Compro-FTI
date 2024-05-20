@@ -3,6 +3,8 @@
 
 @section('content')
 
+@include('Component.Navbar')
+
 <style>
   /*dashboard-berita*/
 .judul{

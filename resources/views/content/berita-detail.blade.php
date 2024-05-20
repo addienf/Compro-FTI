@@ -3,10 +3,20 @@
 
 @section('content')
 
+@include('Component.Navbar')
+
 <style>
   .arahan{
     margin: 50px;
   }
+
+  .container-fluid{
+    background-color: #EEEAF5;
+    width: 80vw;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 15px;
+}
    
     .container-photo{
         display: flex;
@@ -54,7 +64,6 @@
 
     #person{
       justify-content: left;
-    
     }
 
     .container-fluid{
@@ -67,7 +76,6 @@
 
     .container-fluid button{
       width: 10vw;
-      margin-top: 30px;
       background-color: #261446;
       border: none;
       border-radius: 10px;
@@ -75,21 +83,21 @@
 </style>
 
 <!-- judul -->
-<div class="judul"> 
-    <h1>Artikel Berita FTI</h1>
-</div>
+  <div class="judul"> 
+      <h1>Artikel Berita FTI</h1>
+  </div>
 <!-- end judul -->
 
 <!-- bread crumbs -->
-<div class="arahan">
-  <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Home Berita</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data</li>
-      </ol>
-  </nav>
-</div>
+  <div class="arahan">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Home Berita</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>
+  </div>
 <!-- end bread crumbs -->
 
 <!-- gambar berita -->
@@ -160,9 +168,9 @@
               <a href="#" class="btn btn-dark">Selengkapnya</a>
             </div>
           </div>
-        </div> 
-        <button type="button" class="btn btn-dark btn-sm">Berita Lainnya</button>     
+        </div>      
       </div>
+      <button type="button" class="btn btn-dark btn-sm">Berita Lainnya</button>
     </div>
 <!-- end pengumuman -->
 
