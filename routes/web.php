@@ -43,8 +43,12 @@ Route::get('/Kerjasama', function () {
     return view('Content.Kerjasama');
 });
 
+Route::get('/fakultas', function () {
+    return view('content.dashboard-vismis');
+});
+
 Route::get('/Akademik', function () {
-    return view('akademik');
+    return view('Content.akademik');
 });
 
 // Kemahasiswaan
