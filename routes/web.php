@@ -63,3 +63,7 @@ Route::get('/Penelitian', function () {
 Route::get('/PKM', function () {
     return view('Content.PKM');
 });
+
+Route::get('/Kerjasama', function () {
+    return view('Content.Kerjasama');
+});

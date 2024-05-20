@@ -7,7 +7,7 @@
         <div class="popup" id="popup">
             <img src="{{ asset('img\404-tick.png') }}" alt="">
             <h2>Sorry!</h2>
-            <p>Fitur yang anda pilih belum tersedia :(</p>
+            <p>Fitur yang anda pilih belum tersedia :</p>
             <button type="button" onclick="closePopup()">OK</button>
         </div>
         <div class="header-img d-flex container-fluid">
@@ -65,4 +65,6 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
+
 @endsection
