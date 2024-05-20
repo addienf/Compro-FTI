@@ -56,6 +56,13 @@
             $('#test').DataTable();
         });
     </script>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        });
+    </script>
     @yield('script')
 </body>
 

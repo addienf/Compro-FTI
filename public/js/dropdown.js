@@ -46,3 +46,8 @@ function openPopup(){
 function closePopup(){
     popup.classList.remove("open-popup");
 }
+
+document.getElementById('hamburger').addEventListener('click', function() {
+    var navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+});

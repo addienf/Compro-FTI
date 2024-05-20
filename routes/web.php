@@ -36,7 +36,7 @@ Route::get('/Fakultas', function () {
 
 // Akademik
 Route::get('/akademik2', function () {
-    return view('akademik2');
+    return view('Content.akademik2');
 });
 
 Route::get('/Kerjasama', function () {
@@ -44,7 +44,7 @@ Route::get('/Kerjasama', function () {
 });
 
 Route::get('/Akademik', function () {
-    return view('akademik');
+    return view('Content.akademik');
 });
 
 // Kemahasiswaan
