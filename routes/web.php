@@ -32,7 +32,8 @@ Route::get('/berita-d', function () {
 
 Route::get('/fakultas', function () {
     return view('content.dashboard-vismis');
-  
+});
+
 Route::get('/Akademik', function () {
     return view('akademik');
 });
