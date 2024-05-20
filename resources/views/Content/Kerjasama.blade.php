@@ -1,43 +1,92 @@
 @extends('Layout.layout')
 @section('title', 'Akademik')
+@yield('content')
+<link rel="stylesheet" href="{{ asset('css\kerjasama.css') }}">
+@include('Component.Navbar')
 @section('content')
-    @yield('content')
-    <table id="test" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="header-img d-flex container-fluid">
+        <img src="{{ asset('img\Rectangle 15.png') }}" alt="...">
+    </div>
+    <div class="container">
+        <div class="atas"> Nasional</div>
+        <table id="test" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @include('Component.Footer')
 @endsection

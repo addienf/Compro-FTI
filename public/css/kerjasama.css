@@ -1,0 +1,25 @@
+.container {
+        /* color: #333; */
+        /* padding: 100%; */
+        /* background-color: #666; */
+        margin-bottom: -20px;
+        margin-top: 20px;
+        margin-left: 150px;
+        margin-right: 35em;
+        text-align: start;
+        
+}
+
+.atas{
+    font-family: 'Roboto', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        color: #333;
+        padding: 5px;
+        /* background-color: #666; */
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: 15px;
+        /* margin-right: 35em; */
+        text-align: start;
+}
