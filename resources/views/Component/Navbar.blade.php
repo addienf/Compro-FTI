@@ -8,11 +8,11 @@
     <button class="hamburger" id="hamburger">&#9776;</button>
     <img src="img\itenass.png" width="100px" height="25px"alt="Logo image" />
     <ul>
-        <li><a href="#">Profil</a></li>
+        <li><a href="{{ url('Fakultas') }}">Profil</a></li>
         <li><a href="{{ url('Akademik') }}">Akademik</a></li>
         <li><a href="{{ url('KegiatanMahasiswa') }}">Kemahasiswaan</a></li>
         <li><a href="{{ url('PMM') }}">MBKM</a></li>
-        <li><a href="">Tracer Study</a></li>
+        <li><a href="{{ url('Tracer') }}">Tracer Study</a></li>
         <li><a href="{{ url('Kerjasama') }}">Kerjasama</a></li>
         <li><a href="#">Dokumen</a></li>
     </ul>
@@ -23,6 +23,12 @@
         <li><a href="{{ url('PKM') }}">PKM</a></li>
         <li><a href="#contact">Publikasi</a></li>
         <li><a href="#contact">Penjaminan Mutu</a></li>
+        @auth
+            <li><a href="{{ url('Logout') }}">Logout</a></li>
+        @endauth
+        @guest
+            <li><a href="{{ url('Login') }}">Login</a></li>
+        @endguest
     </ul>
 </div>
 <script src="js/dropdown.js"></script>
