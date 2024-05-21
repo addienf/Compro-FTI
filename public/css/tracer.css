@@ -1,0 +1,88 @@
+ /* Custom CSS */
+ h2 {
+     font-size: 2.5rem;
+     font-weight: 600;
+     text-align: center;
+     margin-bottom: 50px;
+ }
+
+ .button {
+     color: #261446;
+ }
+
+ .testimonial-card {
+     border: none;
+     background-color: white;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+     height: 500px;
+ }
+
+ .testimonial-card .card-up {
+     height: 150px;
+     overflow: hidden;
+     border-top-left-radius: 0.25rem;
+     border-top-right-radius: 0.25rem;
+ }
+
+ .testimonial-card .avatar {
+     width: 110px;
+     margin-top: -60px;
+     overflow: hidden;
+     border: 3px solid #fff;
+     border-radius: 50%;
+ }
+
+ .title {
+     margin-top: 20px;
+     font-weight: bold;
+ }
+
+ /* Tambahkan margin bawah untuk setiap container */
+ .container {
+     margin-bottom: 30px;
+ }
+
+ .namatesti {
+     font-family: "Source Sans", Arial, sans-serif;
+     font-size: 16;
+     text-align: center;
+     font-weight: bold;
+ }
+
+ .Subjudul1 {
+     font-size: 30px;
+     color: black;
+     text-align: center;
+     font-weight: bold;
+     margin-top: 20px;
+     margin-bottom: 20px;
+
+ }
+
+ .Subjudul2 {
+     font-size: 30px;
+     color: black;
+     font-weight: bold;
+ }
+
+ .box {
+     background: #133765;
+     height: 95px;
+     color: white;
+     border-radius: 15px;
+ }
+
+ .box1 {
+     background: #133765;
+     height: 95px;
+     width: 1100px;
+     color: white;
+     border-radius: 15px;
+ }
+
+ .box3 {
+     background: #EB890A;
+     border-radius: 5px;
+     margin: 35px 85px 35px 80px;
+     /* Atas, kanan, bawah, kiri */
+ }

@@ -50,14 +50,16 @@
         href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css"
         href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
-     
-     {{-- Navbar --}}
-     <script>
+
+    {{-- Navbar --}}
+    <script>
         document.getElementById('hamburger').addEventListener('click', function() {
             var navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('show');
         });
     </script>
+
+
 
     {{-- Belum di Pake --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> --}}
@@ -79,4 +81,5 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel = "stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css"> --}}
 </body>
+
 </html>

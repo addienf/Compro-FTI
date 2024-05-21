@@ -1,11 +1,12 @@
 @extends('Layout.layout')
-@section('title', 'PMM')
+@section('title', 'Asisten Manajer')
 <link rel="stylesheet" href="{{ asset('css\pmm.css') }}">
 @section('content')
     @include('Component.Navbar')
     <div class="header-img d-flex container-fluid">
         <img src="{{ asset('img\Rectangle 15.png') }}" alt="...">
     </div>
+
     <div class="body">
         <div class="options-container">
             <a class="option active-option" href="{{ url('PMM') }}">Pertukaran Mahasiswa</a>
@@ -25,8 +26,9 @@
                     <th>No</th>
                     <th>NRP</th>
                     <th>Nama</th>
-                    <th>Asal Prodi</th>
+                    <th>Lokasi</th>
                     <th>Tahun</th>
+
                 </tr>
             </thead>
             <tbody>
