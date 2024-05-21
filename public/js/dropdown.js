@@ -56,3 +56,9 @@ $(document).ready(function() {
 setTimeout(function() {
     document.getElementById('successMessage').style.display = 'none';
 }, 1000);
+
+// Navbar
+document.getElementById('hamburger').addEventListener('click', function() {
+    var navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+});
