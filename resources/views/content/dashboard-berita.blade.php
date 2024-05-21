@@ -1,32 +1,144 @@
+
 @extends('layout.layout')
 
 @section('content')
 
+@include('Component.Navbar')
+
+<style>
+  /*dashboard-berita*/
+.judul{
+    max-width: 100vw;
+    height: 150px;
+    background: linear-gradient(to right, #000046, #1cb5e0);
+    color: whitesmoke;
+    align-items: center; 
+    display: flex;
+}
+.judul h1{
+    margin-left: 50px;
+}
+
+.wrapper{
+    margin: 30px;
+    padding: 20px;
+}
+
+.wrapper .row .col-4 .card{
+    margin: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .row .col-4 .card .card-body a{
+    float: right;
+}
+/* end dashboard-berita */
+
+  img{
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .thumb{
+    width: 100%;
+  }
+
+  .main-news{
+    margin-top: 20px;
+    padding: 50px;
+
+  }
+
+  .main-news h3{
+    line-height: 0.75;
+  }
+
+  .main-news h3 a{
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .image{
+    overflow: hidden;
+  }
+
+  .image-sm{
+    max-height: 180px;
+  }
+
+  .image-xs{
+    max-height: 160px;
+  }
+
+  .image-xxs{
+    max-height: 100px;
+  }
+
+  .font-large{
+    font-size: 0.9em!important;
+    font-weight: 600!important;
+  }
+</style>
 
 <div class="judul"> 
     <h1>Artikel Berita FTI</h1>
 </div>
 
 
-<div class="container">
-    <div class="artikel-1">
-        <div class="card">
-            <div class="tumb" style="background-image:url(assets\pexels-wildlittlethingsphoto-3471028.jpg)"></div>
-            <article>
-                <h2>ini buat judul berita</h2>
-                <span>Tanggal</span>
-            </article>
-        </div>
-    </div>
+<div class="container main-news section">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+        <img class="thumb mb-3" src="assets\pexels-pixabay-247823.jpg" alt="">
+        <h3>
+          <a class="font-large" href="">
+            judul berita
+          </a>
+        </h3>
+      </div>
+      <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+            <div class="image image-sm mb-3">
+              <img src="assets\pexels-pixabay-247823.jpg" alt="">
+            </div>
+            <h3>
+              <a class="font-large" href="">
+                peraih juara satu internasional
+              </a>
+            </h3>
 
-    <div class="artikel-2">
-        <div class="card">
-            <div class="tumb" style="background-image:url(assets\pexels-wildlittlethingsphoto-3471028.jpg)"></div>
-            <article>
-                <h2>ini buat judul berita</h2>
-                <span>Tanggal</span>
-            </article>
+            <div class="image image-sm mb-3">
+              <img src="assets\pexels-pixabay-247823.jpg" alt="">
+            </div>
+            <h3>
+              <a class="font-large" href="">
+                judul berita
+              </a>
+            </h3>
         </div>
+
+        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+          <div class="image image-sm mb-3">
+            <img src="assets\pexels-pixabay-247823.jpg" alt="">
+          </div>
+          <h3>
+            <a class="font-large" href="">
+              judul berita
+            </a>
+          </h3>
+
+          <div class="image image-sm mb-3">
+            <img src="assets\pexels-pixabay-247823.jpg" alt="">
+          </div>
+          <h3>
+            <a class="font-large" href="">
+              judul berita
+            </a>
+          </h3>
+        </div>  
+      </div>
     </div>
 </div>
 

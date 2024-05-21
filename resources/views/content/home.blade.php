@@ -1,11 +1,98 @@
 
-@extends('layout.layout')
-
+@extends('Layout.layout')
 @section('content')
 
+@include('Component.Navbar')
+
+<style>
+  body{
+    background-color: #FBFBFB;
+}
+.container-fluid{
+    background-color: #EEEAF5;
+    width: 80vw;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.container-fluid .row{
+    margin: 10px;
+    padding: 15px;
+    justify-content: center;
+}
+
+.row .col-2{
+    text-align: center;
+}
+
+.row .col-2 i{
+    margin: 50px;
+    font-size: 3rem;
+}
+
+.row .col-2 h2{
+    font-size: medium;
+}
+
+.container-fluid .gallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+   
+}
+
+.container-fluid .kerjasama img{
+    width: 100px;
+    height: auto;
+    margin: 50px;
+}
+/* end dashboard-home*/
+
+  #container-fluid button{
+    background-color: #261446;
+  }
+
+  .card-body a{
+    background-color: #EB890A;
+    border: none
+  }
+
+  .col-md-7{
+    margin-right: 50px;
+    margin-left: 0;
+  }
+
+  .col-md-7 button{
+    background-color: #261446;
+    border: none
+  }
+  .col-md-2 img{
+    width: 15vw;
+    height: 200px;
+    margin-top: 5rem;
+    object-fit: cover; 
+  }
+
+  #fti{
+    background-color: transparent;
+  }
+   #banner{
+    background: rgba(0, 0, 0, 0.6)url("assets/pexels-pixabay-247823.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode:darken;
+    color: whitesmoke;
+  }
+
+  #kerjasama{
+    background-color: transparent;
+  }
+</style>
 
 <!-- carosel -->
-  <div id="carouselExampleIndicators" class="carousel slide">
+  <div id="carouselExampleIndicators" class="carousel slide ">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -34,7 +121,7 @@
 <!-- end carosel -->
 
   <!-- pengumuman -->
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <button type="button" class="btn btn-primary btn-sm">Pengumuman</button>
       <button type="button" class="btn btn-secondary btn-sm">Acara Selanjutnya</button>
     
@@ -45,7 +132,7 @@
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">20/04/24</p>
-              <a href="#" class="btn btn-primary">Selengkapnya</a>
+              <a href="#" class="btn btn-dark">Selengkapnya</a>
             </div>
           </div>
 
@@ -56,7 +143,7 @@
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">20/04/24</p>
-              <a href="#" class="btn btn-primary">Selengkapnya</a>
+              <a href="#" class="btn btn-dark">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -67,7 +154,7 @@
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">20/04/24</p>
-              <a href="#" class="btn btn-primary">Selengkapnya</a>
+              <a href="#" class="btn btn-dark">Selengkapnya</a>
             </div>
           </div>
         </div>      
@@ -76,48 +163,51 @@
   <!-- end pengumuman -->
 
 <!-- tentang fti -->
-  <div class="container-fluid" id="no-color">
-    <div class="row">
+  <div class="container-fluid" id="fti">
+    <div class="row mt-5">
       <div class="col-md-7">
         <h2>Tentang FTI</h2>
         <p class="lead">Fakultas Teknologi Industri merupakan Fakultas yang di desain untuk mempersiapkan 
           semua aspek yang dibutuhkan oleh dunia industri. Wawasan mengenai awal mula perindustrian hingga perkembangan teknologinya yang kini menjadi Industri 4.0 
           wajib dipahami sebelum merancang dan mencipta inovasi baru. Fakultas Teknologi Industri menggali potensi yang dimiliki para mahasiswa melalui pemikiran-pemikiran terdepan dalam riset, 
           serta menumbuhkan kreativitas dan inovasi yang akan menjadi modal besar bagi roda penggerak kemajuan industri.</p>
-          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-primary">Pelajari Lebih Lanjut</button>
         </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+      <div class="col-md-2 ">
+        <img src="assets\pexels-wildlittlethingsphoto-3471028.jpg" alt="">
+      </div>
+      <div class="col-md-2 mt-5">
+        <img src="assets\pexels-pixabay-267885.jpg" alt="">
       </div>
     </div>
   </div>
 <!-- end tentang fti -->
 
 <!-- banner -->
- <div class="container-fluid">
+ <div class="container-fluid" id="banner">
     <div class="row mt-3">
         <div class="col-2">
           <i class="fa-solid fa-building-columns"></i>
           <h2>Berdiri Tahun</h2>
         </div>
         <div class="col-2">
-          <i class="fa-solid fa-building-columns"></i>
-          <h2>Berdiri Tahun</h2>
+          <i class="fa-solid fa-book-bookmark"></i>
+          <h2>Jumlah Prodi 8</h2>
         </div>
         <div class="col-2">
-          <i class="fa-solid fa-building-columns"></i>
-          <h2>Berdiri Tahun</h2>
+          <i class="fa-solid fa-flask-vial"></i>
+          <h2>Labs</h2>
         </div>
         <div class="col-2">
-          <i class="fa-solid fa-building-columns"></i>
-          <h2>Berdiri Tahun</h2>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h2>kelompok Keahlian</h2>
         </div>
     </div>
   </div>
 <!-- end banner -->
 
 <!-- kerja sama -->
-   <div class="container-fluid mt-5">
+   <div class="container-fluid mt-5" id="kerjasama">
     <div class="gallery">
       <div class="kerjasama">
         <a href="#"><img src="assets\logo\google-logo.png" alt=""></a>
