@@ -62,3 +62,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
     var navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
 });
+
+//dropdown pmm
+
+$('.dropdown-toggle').dropdown()

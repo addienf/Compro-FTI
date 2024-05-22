@@ -100,3 +100,31 @@ Route::get('/PMM1', function () {
 Route::get('/PMM2', function () {
     return view('Content.MBKM.PMM3');
 });
+
+Route::get('/Magang', function () {
+    return view('Content.MBKM.Magang');
+});
+
+Route::get('/KKNTematik', function () {
+    return view('Content.MBKM.KKNTematik');
+});
+
+Route::get('/Penelitian', function () {
+    return view('Content.MBKM.Penelitian');
+});
+
+Route::get('/PKM', function () {
+    return view('Content.MBKM.PKM');
+});
+
+Route::get('/Kewirausahaan', function () {
+    return view('Content.MBKM.Kewirausahaan');
+});
+
+Route::get('/AsistenManajer', function () {
+    return view('Content.MBKM.AsistenManajer');
+});
+
+Route::get('/StudiIndependen', function () {
+    return view('Content.MBKM.StudiIndependen');
+});
