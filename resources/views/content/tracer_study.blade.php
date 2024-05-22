@@ -382,7 +382,7 @@
                     </div>
                     <div class="box4">
                         <div class="col text-center">
-                            Tokopedia Indonesia
+                            Tokopedia Bandung
                         </div>
                     </div>
                 </div>
