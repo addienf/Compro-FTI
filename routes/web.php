@@ -128,3 +128,15 @@ Route::get('/AsistenManajer', function () {
 Route::get('/StudiIndependen', function () {
     return view('Content.MBKM.StudiIndependen');
 });
+
+Route::get('/publikasi', function () {
+    return view('publikasi');
+});
+
+Route::get('/penjamin', function () {
+    return view('penjamin_mutu');
+});
+
+Route::get('/dokumen', function () {
+    return view('dokumen');
+});
