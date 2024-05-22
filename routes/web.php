@@ -65,17 +65,17 @@ Route::get('/PKM', function () {
 });
 
 Route::get('/tracer', function () {
-    return view('Content.tracer_study');
+    return view('tracer_study');
 });
 
 Route::get('/publikasi', function () {
-    return view('Content.publikasi');
+    return view('publikasi');
 });
 
 Route::get('/penjamin', function () {
-    return view('Content.penjamin_mutu');
+    return view('penjamin_mutu');
 });
 
 Route::get('/dokumen', function () {
-    return view('Content.dokumen');
+    return view('dokumen');
 });
