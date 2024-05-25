@@ -14,15 +14,15 @@
         <li><a href="{{ url('PMM') }}">MBKM</a></li>
         <li><a href="{{ url('Tracer') }}">Tracer Study</a></li>
         <li><a href="{{ url('Kerjasama') }}">Kerjasama</a></li>
-        <li><a href="#">Dokumen</a></li>
+        <li><a href="{{ url('Dokumen') }}">Dokumen</a></li>
     </ul>
 </div>
 <div class="navbottom stroke">
     <ul>
         <li><a href="{{ url('Penelitian') }}">Penelitian</a></li>
         <li><a href="{{ url('PKM') }}">PKM</a></li>
-        <li><a href="#contact">Publikasi</a></li>
-        <li><a href="#contact">Penjaminan Mutu</a></li>
+        <li><a href="{{ url('Publikasi') }}">Publikasi</a></li>
+        <li><a href="{{ url('Penjamin') }}">Penjaminan Mutu</a></li>
         @auth
             <li><a href="{{ url('Logout') }}">Logout</a></li>
         @endauth

@@ -47,9 +47,9 @@
                         <h5 class="card-title">{{ $kgt['JudulKegiatan'] }}</h5>
                         <p class="card-text">{{ $kgt['DescKegiatan'] }}</p>
                         <div class="d-flex justify-content-between">
-                            {{-- <button type="submit" class="btn-view" onclick="openPopup()">Selengkapnya</button> --}}
-                            <button type="submit" class="btn-view" data-bs-toggle="modal"
-                                data-bs-target="#unfinishedFeatureModal">Selengkapnya</button>
+                            <button type="submit" class="btn-view" onclick="openPopup()">Selengkapnya</button>
+                            {{-- <button type="submit" class="btn-view" data-bs-toggle="modal"
+                                data-bs-target="#unfinishedFeatureModal">Selengkapnya</button> --}}
                             @auth
                                 <div class="d-flex justify-content-center align-items-center">
                                     <button type="button" class="btn btn-primary mx-2" data-toggle="modal"
@@ -206,5 +206,4 @@
     </div>
     <script src="js/dropdown.js"></script>
     {{-- @include('Component.Footer') --}}
-
 @endsection

@@ -23,8 +23,10 @@
         }
 
         .btn-purple:hover {
-            background-color: #3e1f6d; /* Warna ungu lebih terang saat hover */
-            color: #fff; /* Warna teks tetap putih */
+            background-color: #3e1f6d;
+            /* Warna ungu lebih terang saat hover */
+            color: #fff;
+            /* Warna teks tetap putih */
         }
 
         table {

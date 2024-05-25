@@ -9,5 +9,6 @@ class Lomba extends Model
 {
     use HasFactory;
     protected $table = "lomba";
+    protected $primaryKey = 'IdLomba';
     protected $fillable = ['JudulLomba', 'ImgLomba', 'DescLomba'];
 }

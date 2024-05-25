@@ -32,7 +32,8 @@
     @yield('script')
 
     {{-- JS --}}
-    <script src="js/dropdown.js"></script>
+    {{-- <script src="js\dropdown.js"></script> --}}
+
 
     {{-- Bootstrap 5 --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -50,16 +51,6 @@
         href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css"
         href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
-
-    {{-- Navbar --}}
-    <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            var navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('show');
-        });
-    </script>
-
-
 
     {{-- Belum di Pake --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> --}}
