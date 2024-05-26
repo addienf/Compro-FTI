@@ -53,9 +53,13 @@ class PenelitianController extends Controller
     {
         //
         $request->validate([
-            'ImgPenelitian' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'JudulPenelitian' => 'required|string|max:255',
+            'ImgPenelitian' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'DescPenelitian' => 'required|string',
         ]);
         $penelitian = Penelitian::findOrFail($id);
+        $penelitian->JudulPenelitian = $request->input('JudulPenelitian');
+        $penelitian->DescPenelitian = $request->input('DescPenelitian');
         $oldFileName = $penelitian->ImgPenelitian;
         if ($request->hasFile('ImgPenelitian') && $oldFileName) {
             $deleted = unlink(public_path('img') . '/' . $oldFileName);

@@ -73,9 +73,13 @@ class KegiatanController extends Controller
     {
         //
         $request->validate([
-            'ImgKegiatan' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'JudulKegiatan' => 'required|string|max:255',
+            'ImgKegiatan' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'DescKegiatan' => 'required|string',
         ]);
         $kegiatan = KegiatanMHS::findOrFail($id);
+        $kegiatan->JudulKegiatan = $request->input('JudulKegiatan');
+        $kegiatan->DescKegiatan = $request->input('DescKegiatan');
         $oldFileName = $kegiatan->ImgKegiatan;
         if ($request->hasFile('ImgKegiatan') && $oldFileName) {
             $deleted = unlink(public_path('img') . '/' . $oldFileName);

@@ -75,9 +75,13 @@ class LombaController extends Controller
     {
         //
         $request->validate([
-            'ImgLomba' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'JudulLomba' => 'required|string|max:255',
+            'ImgLomba' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'DescLomba' => 'required|string',
         ]);
         $lomba = Lomba::findOrFail($id);
+        $lomba->JudulLomba = $request->input('JudulLomba');
+        $lomba->DescLomba = $request->input('DescLomba');
         $oldFileName = $lomba->ImgLomba;
         if ($request->hasFile('ImgLomba') && $oldFileName) {
             $deleted = unlink(public_path('img') . '/' . $oldFileName);

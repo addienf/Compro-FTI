@@ -126,9 +126,12 @@ Route::get('/Dokumen', function () {
 
 
 // MBKM
-Route::get('/PMM', function () {
-    return view('Content.MBKM.PMM1');
-});
+Route::get('/PMM', [MBKMController::class, 'indexPMM']);
+Route::get('/addPMM', [MBKMController::class, 'createPMM']);
+Route::post('/addPMM', [MBKMController::class, 'storePMM']);
+Route::get('/PMM/{id}/edit', [MBKMController::class, 'editPMM'])->name('PMM.Edit');
+Route::put('/PMM/{id}', [MBKMController::class, 'updatePMM'])->name('PMM.Update');
+Route::delete('PMM/{id}', [MBKMController::class, 'destroyPMM'])->name('PMM.Destroy');
 
 Route::get('/PMM1', function () {
     return view('Content.MBKM.PMM2');
@@ -153,18 +156,18 @@ Route::put('/KKNTematik/{id}', [MBKMController::class, 'updateKKN'])->name('KKN.
 Route::delete('KKNTematik/{id}', [MBKMController::class, 'destroyKKN'])->name('KKN.Destroy');
 
 Route::get('/Penelitian-MBKM', [MBKMController::class, 'indexPenelitian']);
-Route::get('/addPMBKM', [MBKMController::class, 'createPMBKM']);
-Route::post('/addPMBKM', [MBKMController::class, 'storePMBKM']);
-Route::get('/PMBKMTematik/{id}/edit', [MBKMController::class, 'editPMBKM'])->name('PMBKM.Edit');
-Route::put('/PMBKMTematik/{id}', [MBKMController::class, 'updatePMBKM'])->name('PMBKM.Update');
-Route::delete('PMBKMTematik/{id}', [MBKMController::class, 'destroyPMBKM'])->name('PMBKM.Destroy');
+Route::get('/addPenelitian', [MBKMController::class, 'createPenelitian']);
+Route::post('/addPenelitian', [MBKMController::class, 'storePenelitian']);
+Route::get('/PenelitianTematik/{id}/edit', [MBKMController::class, 'editPenelitian'])->name('Penelitian.Edit');
+Route::put('/PenelitianTematik/{id}', [MBKMController::class, 'updatePenelitian'])->name('Penelitian.Update');
+Route::delete('PenelitianTematik/{id}', [MBKMController::class, 'destroyPenelitian'])->name('Penelitian.Destroy');
 
 Route::get('/PKM-MBKM', [MBKMController::class, 'indexPKM']);
-Route::get('/addPKMBKM', [MBKMController::class, 'createPKMBKM']);
-Route::post('/addPKMBKM', [MBKMController::class, 'storePKMBKM']);
-Route::get('/PKMBKMTematik/{id}/edit', [MBKMController::class, 'editPKMBKM'])->name('PKMBKM.Edit');
-Route::put('/PKMBKMTematik/{id}', [MBKMController::class, 'updatePKMBKM'])->name('PKMBKM.Update');
-Route::delete('PKMBKMTematik/{id}', [MBKMController::class, 'destroyPKMBKM'])->name('PKMBKM.Destroy');
+Route::get('/addPKM', [MBKMController::class, 'createPKM']);
+Route::post('/addPKM', [MBKMController::class, 'storePKM']);
+Route::get('/PKM/{id}/edit', [MBKMController::class, 'editPKM'])->name('PKM.Edit');
+Route::put('/PKM/{id}', [MBKMController::class, 'updatePKM'])->name('PKM.Update');
+Route::delete('PKM/{id}', [MBKMController::class, 'destroyPKM'])->name('PKM.Destroy');
 
 Route::get('/Kewirausahaan', [MBKMController::class, 'indexKewirus']);
 Route::get('/addKewirus', [MBKMController::class, 'createKewirus']);

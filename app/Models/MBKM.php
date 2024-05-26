@@ -11,6 +11,6 @@ class MBKM extends Model
     protected $table = "mbkm";
     protected $primaryKey = 'IdMBKM';
     protected $fillable = [
-        'IdJenisMBKM', 'ImgLomba', 'NIM', 'Nama', 'AsalKampus', 'AsalProdi', 'TujuanKampus', 'Tahun', 'NamaPerusahaan', 'Lokasi', 'Periode', 'Judul', 'JenisUsaha'
+        'IdJenisMBKM', 'NIM', 'Nama', 'AsalKampus', 'AsalProdi', 'TujuanKampus', 'Tahun', 'NamaPerusahaan', 'Lokasi', 'Periode', 'Judul', 'JenisUsaha'
     ];
 }

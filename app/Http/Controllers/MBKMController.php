@@ -7,6 +7,47 @@ use Illuminate\Http\Request;
 
 class MBKMController extends Controller
 {
+    // PMM
+    public function indexPMM()
+    {
+        //
+        $data = MBKM::where('IdJenisMBKM', 1)->get();
+        return view('Content.MBKM.PMM1', compact('data'));
+    }
+
+    public function createPMM()
+    {
+        return view('Content.MBKM.PMM1');
+    }
+
+    public function storePMM(Request $request)
+    {
+        $input = $request->all();
+        $input['IdJenisMBKM'] = 1;
+        MBKM::create($input);
+        return redirect('PMM')->with('success', 'Data berhasil ditambahkan.');;
+    }
+
+    public function editPMM($id)
+    {
+        $data = MBKM::find($id);
+        return view('Content.MBKM.PMM', compact('data'));
+    }
+
+    public function updatePMM($id, Request $request)
+    {
+        $input = $request->all();
+        MBKM::find($id)->update($input);
+        return redirect('PMM');
+    }
+
+    public function destroyPMM($id)
+    {
+        $PMM = MBKM::find($id);
+        $PMM->delete();
+        return redirect('PMM')->with('error', 'Data berhasil dihapus.');;
+    }
+
     //Magang
     public function indexMagang()
     {
@@ -97,12 +138,78 @@ class MBKMController extends Controller
         return view('Content.MBKM.Penelitian', compact('data'));
     }
 
+    public function createPenelitian()
+    {
+        return view('Content.MBKM.Penelitian');
+    }
+
+    public function storePenelitian(Request $request)
+    {
+        $input = $request->all();
+        $input['IdJenisMBKM'] = 4;
+        MBKM::create($input);
+        return redirect('Penelitian')->with('success', 'Data berhasil ditambahkan.');;
+    }
+
+    public function editPenelitian($id)
+    {
+        $data = MBKM::find($id);
+        return view('Content.MBKM.Penelitian', compact('data'));
+    }
+
+    public function updatePenelitian($id, Request $request)
+    {
+        $input = $request->all();
+        MBKM::find($id)->update($input);
+        return redirect('Penelitian-MBKM');
+    }
+
+    public function destroyPenelitian($id)
+    {
+        $Penelitian = MBKM::find($id);
+        $Penelitian->delete();
+        return redirect('Penelitian-MBKM')->with('error', 'Data berhasil dihapus.');;
+    }
+
     // PKM
     public function indexPKM()
     {
         //
         $data = MBKM::where('IdJenisMBKM', 5)->get();
         return view('Content.MBKM.PKM', compact('data'));
+    }
+
+    public function createPKM()
+    {
+        return view('Content.MBKM.PKM');
+    }
+
+    public function storePKM(Request $request)
+    {
+        $input = $request->all();
+        $input['IdJenisMBKM'] = 5;
+        MBKM::create($input);
+        return redirect('PKM-MBKM')->with('success', 'Data berhasil ditambahkan.');;
+    }
+
+    public function editPKM($id)
+    {
+        $data = MBKM::find($id);
+        return view('Content.MBKM.PKM', compact('data'));
+    }
+
+    public function updatePKM($id, Request $request)
+    {
+        $input = $request->all();
+        MBKM::find($id)->update($input);
+        return redirect('PKM-MBKM');
+    }
+
+    public function destroyPKM($id)
+    {
+        $PKM = MBKM::find($id);
+        $PKM->delete();
+        return redirect('PKM')->with('error', 'Data berhasil dihapus.');;
     }
 
     // Kewirus
