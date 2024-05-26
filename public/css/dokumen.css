@@ -1,0 +1,152 @@
+.container {            
+padding: 20px;
+}
+
+.bag1 {
+background-color: #E6DFF0;
+font-weight: semibold;
+height: 120px;
+padding: 45px;
+}
+
+.subab {
+font-size: 32px;
+font-weight: semibold;
+}
+
+
+        .subab2 {
+            font-family: "Source Sans", Arial, sans-serif;
+            font-size: 20px;
+            font-weight: semibold;
+            text-align: center;
+
+        }
+
+
+        .paragraf {
+            font-size: 24px;
+            font-family: Inter;
+        }
+
+        .gambar {
+            position: center;
+
+        }
+
+        .btn-purple {
+            background-color: #261446;
+            /* Warna ungu */
+            color: #fff;
+            /* Warna teks putih */
+        }
+
+        .bagteks {
+            font-family: "Source Sans", Arial, sans-serif;
+            font-size: 20px;
+            font-weight: semibold;
+        }
+
+        .bagjudulteks {
+            font-weight: bold;
+
+        }
+
+
+        .judulrenstra {
+            width: 530px;
+            height: 50px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: black;
+            text-align: center;
+            
+        }
+
+        .judulrenstra2 {
+            width: 530px;
+            height: 50px;
+            color: black;
+            text-align: center;
+        }
+
+
+        .btn,
+        btn-purple {
+            width: 400px;
+        }
+
+        .btn-purple {
+        
+            color: #fff;
+            width: 500px;
+            height: 50px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-purple:hover {
+            background-color: #3e1f6d !important;
+                color: #fff !important;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            /* background-color: antiquewhite; */
+            margin-left: 80px;
+            margin-bottom: 20px;
+        }
+
+        td,
+        th {
+            text-align: center;
+            padding: 10px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-left: 100px;
+            margin-bottom: 10px;
+            
+
+        }
+
+        /* tr:nth-child(even) {
+            background-color: ;
+        } */
+
+        .h5 {
+            text-align: start;
+            font-size: 15px;
+        }
+
+        .kotak {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .judulatas1 {
+        /* background: red; */
+        font-weight: bold;
+        padding: 5px;
+        margin-right:55% ;
+        text-align: start;
+        font-size: 20px;
+        margin-left: 190px;
+        }
+
+.judulatas2 {
+/* background: beige; */
+font-weight: bold;
+padding: 5px;
+margin-left: 67%;
+text-align: start;
+font-size: 20px;
+margin-top: -40px;
+}
+
