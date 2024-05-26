@@ -113,10 +113,12 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h4 class="text mb-10 font-weight-bold">Follow Us</h4>
-                    <p><i class="fas fa-home mr-3"></i> KAMPUS <br>INSTITUT TEKNOLOGI NASIONAL</I></br></p>
-                    <p><i class="fas fa-envelope mr-3"></i> itenas.ac.id</p>
-                    <p><i class="fas fa-phone mr-3"></i>+622</p>
-                    <p><i class="fas fa-print mr-3"></i>+6134</p>
+                    <p><i class=""></i> KAMPUS <br>INSTITUT TEKNOLOGI NASIONAL</I></br></p>
+                    <p><i class="fas fa-home mr-3"></i> JL.PH.H Mustofa No.23 Bandung</p>
+                    <p><i class=""></i> 40124</p>
+                    <p><i class="fas fa-phone mr-3"></i>+622 7272215</p>
+                    <p><i class="fas fa-envelope mr-3"></i>humas@itenas.ac.id</p>
+                    <p><i class="fas fa-link mr-3"></i>https://www/itenas.ac.id</p>
                 </div>
                 <!-- Grid column -->
             </div>
