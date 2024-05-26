@@ -55,14 +55,10 @@ $(document).ready(function() {
 // Alert 
 setTimeout(function() {
     document.getElementById('successMessage').style.display = 'none';
-}, 1000);
+}, 2000);
 
 // Navbar
 document.getElementById('hamburger').addEventListener('click', function() {
     var navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
 });
-
-//dropdown pmm
-
-$('.dropdown-toggle').dropdown()

@@ -64,6 +64,8 @@ class LombaController extends Controller
     public function edit(string $id)
     {
         //
+        $data = Lomba::findOrFail($id);
+        return view('Content.Lomba', compact('data'));
     }
 
     /**
@@ -72,6 +74,30 @@ class LombaController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $request->validate([
+            'JudulLomba' => 'required|string|max:255',
+            'ImgLomba' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'DescLomba' => 'required|string',
+        ]);
+        $lomba = Lomba::findOrFail($id);
+        $lomba->JudulLomba = $request->input('JudulLomba');
+        $lomba->DescLomba = $request->input('DescLomba');
+        $oldFileName = $lomba->ImgLomba;
+        if ($request->hasFile('ImgLomba') && $oldFileName) {
+            $deleted = unlink(public_path('img') . '/' . $oldFileName);
+            if ($deleted) {
+                $image = $request->file('ImgLomba');
+                $newFileName = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('img'), $newFileName);
+                $lomba->ImgLomba = $newFileName;
+                $lomba->save();
+                return redirect()->back()->with('success', 'File berhasil dihapus dan diunggah.');
+            } else {
+                return redirect()->back()->with('error', 'Gagal menghapus file lama.');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Tidak ada file yang diunggah atau tidak ada file lama yang ditemukan.');
+        }
     }
 
     /**
@@ -80,5 +106,11 @@ class LombaController extends Controller
     public function destroy(string $id)
     {
         //
+        $lomba = Lomba::findOrFail($id);
+        if ($lomba->ImgLomba) {
+            unlink(public_path('img') . '/' . $lomba->ImgLomba);
+        }
+        $lomba->delete();
+        return redirect()->back()->with('error', 'Lomba berhasil dihapus.');
     }
 }

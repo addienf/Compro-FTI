@@ -45,24 +45,45 @@
                     <img src="{{ asset('img/' . $kgt['ImgKegiatan']) }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $kgt['JudulKegiatan'] }}</h5>
-                        <p class="card-text">{{ $kgt['DescKegiatan'] }}</p>
+                        <p class="card-text">
+                            {{ substr($kgt['DescKegiatan'], 0, 50) }}{{ strlen($kgt['DescKegiatan']) > 50 ? '...' : '' }}
+                        </p>
                         <div class="d-flex justify-content-between">
-                            {{-- <button type="submit" class="btn-view" onclick="openPopup()">Selengkapnya</button> --}}
                             <button type="submit" class="btn-view" data-bs-toggle="modal"
-                                data-bs-target="#unfinishedFeatureModal">Selengkapnya</button>
+                                data-bs-target="#Manfaat{{ $kgt->IdKegiatan }}">Selengkapnya</button>
                             @auth
                                 <div class="d-flex justify-content-center align-items-center">
                                     <button type="button" class="btn btn-primary mx-2" data-toggle="modal"
                                         data-target="#editModal{{ $kgt->IdKegiatan }}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </button>
-                                    {{-- <a href="" class="btn btn-primary mx-2"><i class="fa-solid fa-pen-to-square"></i></a> --}}
                                     <button type="button" class="btn btn-danger" data-toggle="modal"
                                         data-target="#deleteModal{{ $kgt->IdKegiatan }}">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </div>
                             @endauth
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Modals --}}
+                {{-- Manfaat --}}
+                <div class="modal fade" id="Manfaat{{ $kgt->IdKegiatan }}" tabindex="-1" role="dialog"
+                    aria-labelledby="ManfaatLabel{{ $kgt->IdKegiatan }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ManfaatLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{ $kgt['DescKegiatan'] }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,8 +129,8 @@
                                     <div class="mb-3">
                                         <label for="judul-kegiatan" class="col-form-label d-flex flex-start">Judul
                                             Kegiatan</label>
-                                        <input type="text" class="form-control" id="judul-kegiatan" name="JudulKegiatan"
-                                            value="{{ $kgt->JudulKegiatan }}" required>
+                                        <input type="text" class="form-control" id="judul-kegiatan"
+                                            name="JudulKegiatan" value="{{ $kgt->JudulKegiatan }}" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="deskripsi-kegiatan"
@@ -206,5 +227,4 @@
     </div>
     <script src="js/dropdown.js"></script>
     {{-- @include('Component.Footer') --}}
-
 @endsection

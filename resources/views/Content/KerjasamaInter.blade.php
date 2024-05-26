@@ -11,7 +11,7 @@
             <a class="option active-option" href="{{ url('Kerjasama') }}">Nasional</a>
             <a class="option active-option" href="{{ url('Kerjasama-I') }}">Internasional</a>
             @auth
-                <a type="button" class="option active-option" data-bs-toggle="modal" data-bs-target="#addKj">Tambah
+                <a type="button" class="option active-option" data-bs-toggle="modal" data-bs-target="#addKjI">Tambah
                     Kegiatan</a>
             @endauth
         </div>
@@ -117,7 +117,7 @@
                                             <button type="button" class="btn-close" data-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <form action="{{ route('Kerjasama.Update', $kj->IdKerjasama) }}" method="POST"
+                                        <form action="{{ route('KerjasamaI.Update', $kj->IdKerjasama) }}" method="POST"
                                             enctype="multipart/form-data">
                                             <div class="modal-body">
                                                 @csrf
@@ -126,13 +126,13 @@
                                                     <label for="nama-mitra" class="col-form-label d-flex flex-start">Nama
                                                         Mitra</label>
                                                     <input type="text" class="form-control" id="nama-mitra"
-                                                        name="NamaMitra" value="{{ $kj->NamaMitra }}" required>
+                                                        name="NamaMitra" value="{{ $kj->NamaMitra }}">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="IdJenisKerjasama"
                                                         class="col-form-label d-flex flex-start">Jenis Kerjasama</label>
                                                     <select name="IdJenisKerjasama" id="IdJenisKerjasama"
-                                                        class="form-select" required>
+                                                        class="form-select">
                                                         @foreach ($data2 as $jenis)
                                                             <option value="{{ $jenis->IdJenisKerjasama }}"
                                                                 @if (old('IdJenisKerjasama', $kj->IdJenisKerjasama) == $jenis->IdJenisKerjasama) selected @endif>
@@ -143,41 +143,41 @@
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" name="Tridarma[1]"
-                                                        id="flexCheckbox1">
+                                                        id="flexCheckbox1" {{ $kj->Tridarma1 ? 'checked' : '' }}>
                                                     <label class="form-check-label d-flex flex-start" for="flexCheckbox1">
                                                         Tridarma1
                                                     </label>
                                                     <input class="form-check-input" type="checkbox" name="Tridarma[2]"
-                                                        id="flexCheckbox2">
+                                                        id="flexCheckbox1" {{ $kj->Tridarma2 ? 'checked' : '' }}>
                                                     <label class="form-check-label d-flex flex-start" for="flexCheckbox2">
                                                         Tridarma2
                                                     </label>
                                                     <input class="form-check-input" type="checkbox" name="Tridarma[3]"
-                                                        id="flexCheckbox3">
+                                                        id="flexCheckbox1" {{ $kj->Tridarma3 ? 'checked' : '' }}>
                                                     <label class="form-check-label d-flex flex-start" for="flexCheckbox3">
                                                         Tridarma3
                                                     </label>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="mulai-kerjasama"
-                                                        class="col-form-label d-flex flex-start">Mulai
-                                                        Kerjasama</label>
+                                                        class="col-form-label d-flex flex-start">Mulai Kerjasama</label>
                                                     <input type="date" class="form-control" id="mulai-kerjasama"
-                                                        name="Mulai" value="{{ $kj->Mulai }}" required>
+                                                        name="Mulai"
+                                                        value="{{ date('Y-m-d', strtotime($kj->Mulai)) }}">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="kerjasama-berakhir"
-                                                        class="col-form-label d-flex flex-start">Akhir
-                                                        Kerjasama</label>
+                                                        class="col-form-label d-flex flex-start">Akhir Kerjasama</label>
                                                     <input type="date" class="form-control" id="kerjasama-berakhir"
-                                                        name="Berakhir" value="{{ $kj->Berakhir }}" required>
+                                                        name="Berakhir"
+                                                        value="{{ date('Y-m-d', strtotime($kj->Berakhir)) }}">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="manfaat-kerjasama"
                                                         class="col-form-label d-flex flex-start">Manfaat
                                                         Kerjasama</label>
                                                     <input type="text" class="form-control" id="manfaat-kerjasama"
-                                                        name="Manfaat" value="{{ $kj->Manfaat }}" required>
+                                                        name="Manfaat" value="{{ $kj->Manfaat }}">
                                                 </div>
                                             </div>
                                             <div class="modal-footer mt-2">
@@ -225,14 +225,14 @@
         </div>
 
         {{-- Tambah Data --}}
-        <div class="modal fade" id="addKj" tabindex="-1" aria-labelledby="addKjLabel" aria-hidden="true">
+        <div class="modal fade" id="addKjI" tabindex="-1" aria-labelledby="addKjILabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addKjLabel">Tambah Kegiatan</h5>
+                        <h5 class="modal-title" id="addKjILabel">Tambah Kegiatan</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="addKj" method="POST" enctype="multipart/form-data">
+                    <form action="addKjI" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             @csrf
                             <div class="mb-3">
