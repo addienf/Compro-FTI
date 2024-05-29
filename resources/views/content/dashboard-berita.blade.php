@@ -1,179 +1,105 @@
 
-@extends('layout.layout')
-
+@extends('Layout.layout')
+<link rel="stylesheet" href="{{asset('css\berita.css')}}">
 @section('content')
 
 @include('Component.Navbar')
 
-<style>
-  /*dashboard-berita*/
-.judul{
-    max-width: 100vw;
-    height: 150px;
-    background: linear-gradient(to right, #000046, #1cb5e0);
-    color: whitesmoke;
-    align-items: center; 
-    display: flex;
-}
-.judul h1{
-    margin-left: 50px;
-}
-
-.wrapper{
-    margin: 30px;
-    padding: 20px;
-}
-
-.wrapper .row .col-4 .card{
-    margin: 30px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.wrapper .row .col-4 .card .card-body a{
-    float: right;
-}
-/* end dashboard-berita */
-
-  img{
-    width: 300px;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .thumb{
-    width: 100%;
-  }
-
-  .main-news{
-    margin-top: 20px;
-    padding: 50px;
-
-  }
-
-  .main-news h3{
-    line-height: 0.75;
-  }
-
-  .main-news h3 a{
-    font-size: 17px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .image{
-    overflow: hidden;
-  }
-
-  .image-sm{
-    max-height: 180px;
-  }
-
-  .image-xs{
-    max-height: 160px;
-  }
-
-  .image-xxs{
-    max-height: 100px;
-  }
-
-  .font-large{
-    font-size: 0.9em!important;
-    font-weight: 600!important;
-  }
-</style>
-
-<div class="judul"> 
+<div class="jud"> 
     <h1>Artikel Berita FTI</h1>
 </div>
 
-
 <div class="container main-news section">
-    <div class="row">
-      <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
-        <img class="thumb mb-3" src="assets\pexels-pixabay-247823.jpg" alt="">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+      <img class="thumb mb-3" src="assets\pexels-pixabay-247823.jpg" alt="">
         <h3>
           <a class="font-large" href="">
-            judul berita
+            Juara 1 International
           </a>
         </h3>
-      </div>
-      <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
-        <div class="row">
-          <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-            <div class="image image-sm mb-3">
-              <img src="assets\pexels-pixabay-247823.jpg" alt="">
-            </div>
-            <h3>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+          <div class="image image-sm mb-1">
+            <img src="assets\pexels-pixabay-247823.jpg" alt="">
+          </div>
+            <h3 class="mb-4">
               <a class="font-large" href="">
-                peraih juara satu internasional
+                Hibah Alat Praktikum FTI terbaru 2024 oleh pddikti jawabarat
               </a>
             </h3>
 
-            <div class="image image-sm mb-3">
+            <div class="image image-sm mb-1">
               <img src="assets\pexels-pixabay-247823.jpg" alt="">
             </div>
-            <h3>
+            <h3 class="mb-4">
               <a class="font-large" href="">
-                judul berita
+                Akreditasi Prodi Sistem Informasi terbaru tahun 2024
               </a>
             </h3>
         </div>
 
         <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-          <div class="image image-sm mb-3">
+          <div class="image image-sm mb-1">
             <img src="assets\pexels-pixabay-247823.jpg" alt="">
           </div>
-          <h3>
+          <h3 class="mb-4">
             <a class="font-large" href="">
-              judul berita
+              Program Magang Fakultas FTI telah diuka untuk umum
             </a>
           </h3>
 
-          <div class="image image-sm mb-3">
+          <div class="image image-sm mb-1">
             <img src="assets\pexels-pixabay-247823.jpg" alt="">
           </div>
-          <h3>
-            <a class="font-large" href="">
-              judul berita
-            </a>
+          <h3 class="mb-4">
+          <a class="font-large" href="">
+            Penghargaan untuk fakultas fti yang telah menyelesaikan akreditasi
+          </a>
           </h3>
-        </div>  
-      </div>
+      </div>  
     </div>
+  </div>
+</div>
 </div>
 
-  <!-- section berita -->
-  <div class="wrapper">
-    <div class="row mt-3">
-      <div class="col-4">
-        <div class="card">
-          <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">20/04/24</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-          </div>
-        </div>
 
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">20/04/24</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-          </div>
+
+<!-- section berita -->
+<div class="wrapper">
+  <div class="row mt-3">
+    <div class="col-4">
+      <div class="card">
+        <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">20/04/24</p>
+          <a href="#" class="btn btn-dark">Selengkapnya</a>
         </div>
       </div>
 
+    </div>
       <div class="col-4">
         <div class="card">
           <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">20/04/24</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <a href="#" class="btn btn-dark">Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+          <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">20/04/24</p>
+            <a href="#" class="btn btn-dark">Selengkapnya</a>
           </div>
         </div>
       </div> 
@@ -184,7 +110,7 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">20/04/24</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <a href="#" class="btn btn-dark">Selengkapnya</a>
           </div>
         </div>
       </div>      
@@ -195,7 +121,7 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">20/04/24</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <a href="#" class="btn btn-dark">Selengkapnya</a>
           </div>
         </div>
       </div>      
@@ -206,12 +132,12 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">20/04/24</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
+            <a href="#" class="btn btn-dark">Selengkapnya</a>
           </div>
         </div>
       </div>      
     </div>
-  </div>
+</div>
 <!-- end section berita -->
 
 <nav aria-label="Page navigation example">
@@ -232,4 +158,4 @@
         </a>
       </li>
     </ul>
-  </nav>
+</nav>

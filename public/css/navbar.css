@@ -106,11 +106,13 @@ body
   padding: 5px;
   text-align: center;
 }
+
 #mainNav {
   font-size: 5px;
   display: flex;
   justify-content: center;
 }
+
 /*CSS3 STROKE EFFECT*/
 #mainNav ul {
   list-style: none;
