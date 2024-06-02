@@ -46,3 +46,19 @@ function openPopup(){
 function closePopup(){
     popup.classList.remove("open-popup");
 }
+
+// Data Table
+$(document).ready(function() {
+    $('#test').DataTable();
+});
+
+// Alert 
+setTimeout(function() {
+    document.getElementById('successMessage').style.display = 'none';
+}, 2000);
+
+// Navbar
+document.getElementById('hamburger').addEventListener('click', function() {
+    var navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+});
