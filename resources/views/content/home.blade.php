@@ -1,5 +1,6 @@
 
 @extends('Layout.layout')
+<link rel="stylesheet" href="{{asset('css\home.css')}}">
 @section('content')
 
 @include('Component.Navbar')
@@ -18,7 +19,7 @@
 
 .container-fluid .row{
     margin: 10px;
-    padding: 15px;
+    padding: 20px;
     justify-content: center;
 }
 
@@ -40,7 +41,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px;
-   
+
 }
 
 .container-fluid .kerjasama img{
@@ -50,23 +51,41 @@
 }
 /* end dashboard-home*/
 
-  #container-fluid button{
+  #container-fluid .container{
+    max-width: 280px;
+    float: left;
+  }
+
+  #container-fluid .container #btn-p{
     background-color: #261446;
+    color: #EEEAF5;
+    border: none;
+  }
+
+  #container-fluid .container #btn-a{
+    background-color: #CABEE0;
+    border: none;
+  }
+
+  .card-body{
+    text-align: left;
   }
 
   .card-body a{
     background-color: #EB890A;
-    border: none
+    border: none;
+    float: right;
   }
 
   .col-md-7{
     margin-right: 50px;
     margin-left: 0;
+    text-align: left;
   }
 
   .col-md-7 button{
     background-color: #261446;
-    border: none
+    border: none;
   }
   .col-md-2 img{
     width: 15vw;
@@ -86,9 +105,64 @@
     color: whitesmoke;
   }
 
+  .thumb{
+  width: 100%;
+}
+
+.main-news{
+  margin-top: 50px;
+  padding: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: -5px -5px -10px rgba(0, 0, 0, 0.2);
+}
+
+.main-news a{
+  color: #020202;
+}
+
+.main-news h3{
+  line-height: 1.5;
+}
+
+.main-news h3 a{
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: 600;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.image{
+  overflow: hidden;
+}
+
+.image-sm{
+  max-height: 160px;
+}
+
+.image-sm img{
+  height: 180px;
+}
+
+.image-xs{
+  max-height: 160px;
+}
+
+.image-xxs{
+  max-height: 100px;
+}
+
+.font-large{
+  font-size: 0.9em!important;
+  font-weight: 600!important;
+}
+
   #kerjasama{
     background-color: transparent;
   }
+
 </style>
 
 <!-- carosel -->
@@ -121,11 +195,12 @@
 <!-- end carosel -->
 
   <!-- pengumuman -->
-    <div class="container-fluid" >
-      <button type="button" class="btn btn-primary btn-sm">Pengumuman</button>
-      <button type="button" class="btn btn-secondary btn-sm">Acara Selanjutnya</button>
-    
-      <div class="row mt-3">
+    <div class="container-fluid" id="container-fluid">
+      <div class="container mt-2">
+        <button type="button" class="btn-sm" id="btn-p">Pengumuman</button>
+        <button type="button" class="btn-sm" id="btn-a">Acara Selanjutnya</button>
+      </div>
+      <div class="row mt-5">
         <div class="col-4">
           <div class="card">
             <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
@@ -157,7 +232,8 @@
               <a href="#" class="btn btn-dark">Selengkapnya</a>
             </div>
           </div>
-        </div>      
+        </div>
+              
       </div>
     </div>
   <!-- end pengumuman -->
@@ -205,6 +281,66 @@
     </div>
   </div>
 <!-- end banner -->
+
+<!--berita-->
+  <h3>Berita Terbaru</h3>
+  <div class="container main-news section mt-4">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+          <img class="thumb mb-3" src="assets\pexels-pixabay-247823.jpg" alt="">
+            <h3>
+              <a class="font-large" href="">
+                Juara 1 International
+              </a>
+            </h3>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+              <div class="image image-sm mb-1">
+                <img src="assets\pexels-pixabay-247823.jpg" alt="">
+              </div>
+                <h3 class="mb-4">
+                  <a class="font-large" href="">
+                    Hibah Alat Praktikum FTI terbaru 2024 oleh pddikti jawabarat
+                  </a>
+                </h3>
+
+                <div class="image image-sm mb-1">
+                  <img src="assets\pexels-pixabay-247823.jpg" alt="">
+                </div>
+                <h3 class="mb-4">
+                  <a class="font-large" href="">
+                    Akreditasi Prodi Sistem Informasi terbaru tahun 2024
+                  </a>
+                </h3>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+              <div class="image image-sm mb-1">
+                <img src="assets\pexels-pixabay-247823.jpg" alt="">
+              </div>
+              <h3 class="mb-4">
+                <a class="font-large" href="">
+                  Program Magang Fakultas FTI telah diuka untuk umum
+                </a>
+              </h3>
+
+              <div class="image image-sm mb-1">
+                <img src="assets\pexels-pixabay-247823.jpg" alt="">
+              </div>
+              <h3 class="mb-4">
+              <a class="font-large" href="">
+                Penghargaan untuk fakultas fti yang telah menyelesaikan akreditasi
+              </a>
+              </h3>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+<!--berita-->
 
 <!-- kerja sama -->
    <div class="container-fluid mt-5" id="kerjasama">
