@@ -35,125 +35,130 @@
                     Data</a>
             </div>
         @endauth
-        <div class="container-table">
-            <table id="test" class="table table-striped " style="width:100%">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>NRP</th>
-                        <th>Nama</th>
-                        <th>Mitra</th>
-                        <th>Judul</th>
-                        <th>Periode</th>
-                        @auth
-                            <th>Action</th>
-                        @endauth
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $index => $peneliti)
+        <div data-aos="fade-up">
+            <div class="container-table">
+                <table id="test" class="table table-striped " style="width:100%">
+                    <thead>
                         <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $peneliti['NIM'] }}</td>
-                            <td>{{ $peneliti['Nama'] }}</td>
-                            <td>{{ $peneliti['NamaPerusahaan'] }}</td>
-                            <td>{{ $peneliti['Judul'] }}</td>
-                            <td>{{ $peneliti['Periode'] }}</td>
+                            <th>No</th>
+                            <th>NRP</th>
+                            <th>Nama</th>
+                            <th>Mitra</th>
+                            <th>Judul</th>
+                            <th>Periode</th>
                             @auth
-                                <td>
-                                    <div class="d-flex justify-content-center mt-1">
-                                        <a class="btn-primary mx-2 fa-solid fa-pen-to-square p-1" data-bs-toggle="modal"
-                                            data-bs-target="#editModal{{ $peneliti->IdMBKM }}"></a>
-                                        <a class="btn-danger mx-2 fas fa-trash p-1" data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal{{ $peneliti->IdMBKM }}"></a>
-                                    </div>
-                                </td>
+                                <th>Action</th>
                             @endauth
                         </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $index => $peneliti)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $peneliti['NIM'] }}</td>
+                                <td>{{ $peneliti['Nama'] }}</td>
+                                <td>{{ $peneliti['NamaPerusahaan'] }}</td>
+                                <td>{{ $peneliti['Judul'] }}</td>
+                                <td>{{ $peneliti['Periode'] }}</td>
+                                @auth
+                                    <td>
+                                        <div class="d-flex justify-content-center mt-1">
+                                            <a class="btn-primary mx-2 fa-solid fa-pen-to-square p-1" data-bs-toggle="modal"
+                                                data-bs-target="#editModal{{ $peneliti->IdMBKM }}"></a>
+                                            <a class="btn-danger mx-2 fas fa-trash p-1" data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal{{ $peneliti->IdMBKM }}"></a>
+                                        </div>
+                                    </td>
+                                @endauth
+                            </tr>
 
-                        {{-- Modals --}}
-                        {{-- Delete Data --}}
-                        <div class="modal fade" id="deleteModal{{ $peneliti->IdMBKM }}" tabindex="-1" role="dialog"
-                            aria-labelledby="deleteModalLabel{{ $peneliti->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="deleteModalLabel{{ $peneliti->IdMBKM }}">Konfirmasi
-                                            Hapus
-                                        </h5>
-                                    </div>
-                                    <div class="modal-body">
-                                        Apakah Anda yakin ingin menghapus kegiatan ini?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <form action="{{ route('Penelitian.Destroy', $peneliti->IdMBKM) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="modal fade" id="editModal{{ $peneliti->IdMBKM }}" tabindex="-1" role="dialog"
-                            aria-labelledby="editModalLabel{{ $peneliti->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel{{ $peneliti->IdMBKM }}">Edit Kegiatan
-                                        </h5>
-                                    </div>
-                                    <form action="{{ route('Penelitian.Update', $peneliti->IdMBKM) }}" method="POST"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        @method('PUT')
+                            {{-- Modals --}}
+                            {{-- Delete Data --}}
+                            <div class="modal fade" id="deleteModal{{ $peneliti->IdMBKM }}" tabindex="-1" role="dialog"
+                                aria-labelledby="deleteModalLabel{{ $peneliti->IdMBKM }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel{{ $peneliti->IdMBKM }}">Konfirmasi
+                                                Hapus
+                                            </h5>
+                                        </div>
                                         <div class="modal-body">
-                                            <div class="mb-3">
-                                                <label for="nrp-magang" class="col-form-label d-flex flex-start">NRP</label>
-                                                <input type="text" class="form-control" id="nrp-magang" name="NIM"
-                                                    value="{{ $peneliti->NIM }}" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="nama-magang" class="col-form-label d-flex flex-start">Nama
-                                                    Mahasiswa</label>
-                                                <input type="text" class="form-control" id="nama-magang" name="Nama"
-                                                    value="{{ $peneliti->Nama }}" required></input>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="nama-mitra" class="col-form-label d-flex flex-start">Nama
-                                                    Mitra</label>
-                                                <input type="text" class="form-control" id="nama-mitra"
-                                                    value="{{ $peneliti->NamaPerusahaan }}" name="NamaPerusahaan"
-                                                    required></input>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="judul-penelitian"
-                                                    class="col-form-label d-flex flex-start">Judul</label>
-                                                <input type="text" class="form-control" id="judul-penelitian"
-                                                    value="{{ $peneliti->Judul }}" name="Judul" required></input>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="periode-penelitian"
-                                                    class="col-form-label d-flex flex-start">Periode Penelitian</label>
-                                                <input type="text" class="form-control" id="periode-penelitian"
-                                                    value="{{ $peneliti->Periode }}" name="Periode" required></input>
-                                            </div>
+                                            Apakah Anda yakin ingin menghapus kegiatan ini?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                            <form action="{{ route('Penelitian.Destroy', $peneliti->IdMBKM) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                            </form>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </tbody>
-            </table>
+
+                            <div class="modal fade" id="editModal{{ $peneliti->IdMBKM }}" tabindex="-1" role="dialog"
+                                aria-labelledby="editModalLabel{{ $peneliti->IdMBKM }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel{{ $peneliti->IdMBKM }}">Edit
+                                                Kegiatan
+                                            </h5>
+                                        </div>
+                                        <form action="{{ route('Penelitian.Update', $peneliti->IdMBKM) }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="nrp-magang"
+                                                        class="col-form-label d-flex flex-start">NRP</label>
+                                                    <input type="text" class="form-control" id="nrp-magang"
+                                                        name="NIM" value="{{ $peneliti->NIM }}" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="nama-magang" class="col-form-label d-flex flex-start">Nama
+                                                        Mahasiswa</label>
+                                                    <input type="text" class="form-control" id="nama-magang"
+                                                        name="Nama" value="{{ $peneliti->Nama }}" required></input>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="nama-mitra" class="col-form-label d-flex flex-start">Nama
+                                                        Mitra</label>
+                                                    <input type="text" class="form-control" id="nama-mitra"
+                                                        value="{{ $peneliti->NamaPerusahaan }}" name="NamaPerusahaan"
+                                                        required></input>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="judul-penelitian"
+                                                        class="col-form-label d-flex flex-start">Judul</label>
+                                                    <input type="text" class="form-control" id="judul-penelitian"
+                                                        value="{{ $peneliti->Judul }}" name="Judul" required></input>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="periode-penelitian"
+                                                        class="col-form-label d-flex flex-start">Periode Penelitian</label>
+                                                    <input type="text" class="form-control" id="periode-penelitian"
+                                                        value="{{ $peneliti->Periode }}" name="Periode" required></input>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -204,4 +209,5 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

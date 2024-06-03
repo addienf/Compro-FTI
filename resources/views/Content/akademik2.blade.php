@@ -16,28 +16,32 @@
             <a href="{{ url('Akademik') }}"><button class="options">Sarjana</button></a>
             <a href="{{ url('akademik2') }}"><button class="options1">Pasca Sarjana</button></a>
         </div>
-        <div class="card-container-akademik2">
-            <div class="card-akademik" style="width: 18rem;">
-                <img src="{{ asset('img\exp1.png') }}" class="card-img-top" alt="...">
-                <div class="card-content">
-                    <p class="card-text-akademik">Unggul</p>
-                    <div class="card-little-akademik">Program Studi Teknik Mesin</div>
+        <div data-aos="fade-up">
+            <div class="card-container-akademik2">
+                <div class="card-akademik" style="width: 18rem;">
+                    <img src="{{ asset('img\exp1.png') }}" class="card-img-top" alt="...">
+                    <div class="card-content">
+                        <p class="card-text-akademik">Unggul</p>
+                        <div class="card-little-akademik">Program Studi Teknik Mesin</div>
+                    </div>
                 </div>
-            </div>
-            <div class="card-akademik" style="width: 18rem;">
-                <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
-                <div class="card-content">
-                    <p class="card-text-akademik">B</p>
-                    <div class="card-little-akademik">Program Studi Teknik Industri</div>
+                <div class="card-akademik" style="width: 18rem;">
+                    <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
+                    <div class="card-content">
+                        <p class="card-text-akademik">B</p>
+                        <div class="card-little-akademik">Program Studi Teknik Industri</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="akademik"> Jadwal Ujian</div>
-        <div class="ujian"> </div>
-        <div class="akademik"> Kalender Akademik</div>
-        <div class="kalender"> </div>
-        <div class="akademik"> Kebijakan dan Peraturan Akademik</div>
-        <div class="bijak"> </div>
+        <div data-aos="fade-up">
+            <div class="akademik"> Jadwal Ujian</div>
+            <div class="ujian"> </div>
+            <div class="akademik"> Kalender Akademik</div>
+            <div class="kalender"> </div>
+            <div class="akademik"> Kebijakan dan Peraturan Akademik</div>
+            <div class="bijak"> </div>
+        </div>
     </div>
     @include('Component.Footer')
 @endsection

@@ -1,0 +1,124 @@
+  .arahan {
+      margin: 50px;
+  }
+
+  .container-photo {
+      display: flex;
+      justify-content: center;
+      /* Menengahkan horizontal */
+      align-items: center;
+
+  }
+
+  img {
+      width: 60vw;
+      height: 60vh;
+      object-fit: cover;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      margin: 30px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .container {
+      width: 80%;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      line-height: 1cm;
+  }
+
+  .container p {
+      text-align: justify;
+  }
+
+  .container .nav {
+      justify-content: left;
+  }
+
+  .container .nav i {
+      margin: 10px;
+  }
+
+  .container .nav i a {
+      margin: 10px;
+  }
+
+        .arahan {
+            margin: 50px;
+        }
+    
+        .container-fluid {
+            background-color: #EEEAF5;
+            width: 80vw;
+            margin: 2rem auto;
+            padding: 1rem;
+            border-radius: 15px;
+        }
+    
+        .container-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+    
+        .container-photo img {
+            width: 60vw;
+            height: 60vh;
+            object-fit: cover;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            margin: 30px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .container {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            line-height: 1cm;
+        }
+    
+        .container p {
+            text-align: justify;
+        }
+    
+    
+        .container i {
+            margin: 10px;
+            font-size: 1rem;
+            color: #EB890A;
+        }
+    
+        .container i p {
+            color: black;
+            float: right;
+            margin-left: 10px;
+            font-size: 15px;
+        }
+    
+        #person {
+            justify-content: left;
+        }
+    
+        .container-fluid {
+            background-color: transparent;
+        }
+    
+        .card {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    
+        .container-fluid button {
+            width: 10vw;
+            background-color: #261446;
+            border: none;
+            border-radius: 10px;
+        }

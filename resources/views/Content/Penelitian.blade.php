@@ -39,101 +39,107 @@
                 {{ session('error') }}
             </div>
         @endif
-        <div class="card-container">
-            @foreach ($data as $penelitian)
-                <div class="card" style="background-image: url('{{ asset('img/' . $penelitian['ImgPenelitian']) }}');"
-                    onclick="">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $penelitian['JudulPenelitian'] }}</h5>
-                        <p class="card-text">{{ $penelitian['DescPenelitian'] }}</p>
-                        @auth
-                            <div class="d-flex justify-content-center align-items-center z-index-1">
-                                <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal"
-                                    data-bs-target="#editModal{{ $penelitian->IdPenelitian }}">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#deleteModal{{ $penelitian->IdPenelitian }}">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        @endauth
+        <div data-aos="fade-up">
+            <div class="card-container">
+                @foreach ($data as $penelitian)
+                    <div class="card"
+                        style="background-image: url('{{ asset('img/' . $penelitian['ImgPenelitian']) }}');"
+                        onclick="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $penelitian['JudulPenelitian'] }}</h5>
+                            <p class="card-text">{{ $penelitian['DescPenelitian'] }}</p>
+                            @auth
+                                <div class="d-flex justify-content-center align-items-center z-index-1">
+                                    <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal"
+                                        data-bs-target="#editModal{{ $penelitian->IdPenelitian }}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#deleteModal{{ $penelitian->IdPenelitian }}">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            @endauth
+                        </div>
                     </div>
-                </div>
 
-                {{-- Modals --}}
-                {{-- Delete Data --}}
-                <div class="modal fade" id="deleteModal{{ $penelitian->IdPenelitian }}" tabindex="-1" role="dialog"
-                    aria-labelledby="deleteModalLabel{{ $penelitian->IdPenelitian }}" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="deleteModalLabel{{ $penelitian->IdPenelitian }}">Konfirmasi
-                                    Hapus
-                                </h5>
+                    {{-- Modals --}}
+                    {{-- Delete Data --}}
+                    <div class="modal fade" id="deleteModal{{ $penelitian->IdPenelitian }}" tabindex="-1" role="dialog"
+                        aria-labelledby="deleteModalLabel{{ $penelitian->IdPenelitian }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel{{ $penelitian->IdPenelitian }}">Konfirmasi
+                                        Hapus
+                                    </h5>
+                                </div>
+                                <div class="modal-body">
+                                    Apakah Anda yakin ingin menghapus kegiatan ini?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <form action="{{ route('Penelitian.Destroy', $penelitian->IdPenelitian) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                Apakah Anda yakin ingin menghapus kegiatan ini?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                <form action="{{ route('Penelitian.Destroy', $penelitian->IdPenelitian) }}" method="POST">
+                        </div>
+                    </div>
+
+                    {{-- Edit Data --}}
+                    <div class="modal fade" id="editModal{{ $penelitian->IdPenelitian }}" tabindex="-1" role="dialog"
+                        aria-labelledby="editModalLabel{{ $penelitian->IdPenelitian }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel{{ $penelitian->IdPenelitian }}">Edit
+                                        Kegiatan
+                                    </h5>
+                                </div>
+                                <form action="{{ route('Penelitian.Update', $penelitian->IdPenelitian) }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                    @method('PUT')
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="judul-penelitian" class="col-form-label d-flex flex-start">Judul
+                                                Penelitian</label>
+                                            <input type="text" class="form-control" id="judul-penelitian"
+                                                name="JudulPenelitian" value="{{ $penelitian->JudulPenelitian }}" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="deskripsi-penelitian"
+                                                class="col-form-label d-flex flex-start">Deskripsi</label>
+                                            <textarea class="form-control" id="deskripsi-penelitian" name="DescPenelitian" required>{{ $penelitian->DescPenelitian }}</textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="img-kegiatan" class="col-form-label d-flex flex-start">Dokumentasi
+                                                Penelitian</label>
+                                            <input class="form-control" type="file" id="img-kegiatan"
+                                                name="ImgPenelitian" accept="image/*">
+                                            @if ($penelitian->ImgPenelitian)
+                                                <div class="mt-2">
+                                                    <img src="{{ asset('img/' . $penelitian->ImgPenelitian) }}"
+                                                        alt="Dokumentasi Penelitian" style="max-width: 200px;">
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {{-- Edit Data --}}
-                <div class="modal fade" id="editModal{{ $penelitian->IdPenelitian }}" tabindex="-1" role="dialog"
-                    aria-labelledby="editModalLabel{{ $penelitian->IdPenelitian }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $penelitian->IdPenelitian }}">Edit Kegiatan
-                                </h5>
-                            </div>
-                            <form action="{{ route('Penelitian.Update', $penelitian->IdPenelitian) }}" method="POST"
-                                enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label for="judul-penelitian" class="col-form-label d-flex flex-start">Judul
-                                            Penelitian</label>
-                                        <input type="text" class="form-control" id="judul-penelitian"
-                                            name="JudulPenelitian" value="{{ $penelitian->JudulPenelitian }}" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="deskripsi-penelitian"
-                                            class="col-form-label d-flex flex-start">Deskripsi</label>
-                                        <textarea class="form-control" id="deskripsi-penelitian" name="DescPenelitian" required>{{ $penelitian->DescPenelitian }}</textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="img-kegiatan" class="col-form-label d-flex flex-start">Dokumentasi
-                                            Penelitian</label>
-                                        <input class="form-control" type="file" id="img-kegiatan"
-                                            name="ImgPenelitian" accept="image/*">
-                                        @if ($penelitian->ImgPenelitian)
-                                            <div class="mt-2">
-                                                <img src="{{ asset('img/' . $penelitian->ImgPenelitian) }}"
-                                                    alt="Dokumentasi Penelitian" style="max-width: 200px;">
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
 
         {{-- Modals --}}

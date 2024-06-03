@@ -15,6 +15,7 @@
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
                             class="rounded-circle img-fluid" />
                     </div>
+
                     <div class="card-body text-center">
                         <div class="namatesti">Putri Ayu</div>
                         <p>Teknik Sipil</p>
@@ -70,47 +71,49 @@
                     Data Lulusan
                 </div>
             </div>
-            <table id="test" class="table table-striped" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Mitra</th>
-                        <th>Jenis Kegiatan</th>
-                        <th>Mulai</th>
-                        <th>Berakhir</th>
-                        <th>Manfaat</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fauzan</td>
-                        <td>System Architect</td>
-                        <td>Cimahi</td>
-                        <td>61</td>
-                        <td>2011-04-25</td>
-                        <td>$1</td>
-                    </tr>
-                    <tr>
-                        <td>Fauzan</td>
-                        <td>System Architect</td>
-                        <td>Cimahi</td>
-                        <td>61</td>
-                        <td>2011-04-25</td>
-                        <td>$1</td>
-                    </tr>
-                    <tr>
-                        <td>Fauzan</td>
-                        <td>System Architect</td>
-                        <td>Cimahi</td>
-                        <td>61</td>
-                        <td>2011-04-25</td>
-                        <td>$1</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div data-aos="fade-up">
+                <table id="test" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Mitra</th>
+                            <th>Jenis Kegiatan</th>
+                            <th>Mulai</th>
+                            <th>Berakhir</th>
+                            <th>Manfaat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fauzan</td>
+                            <td>System Architect</td>
+                            <td>Cimahi</td>
+                            <td>61</td>
+                            <td>2011-04-25</td>
+                            <td>$1</td>
+                        </tr>
+                        <tr>
+                            <td>Fauzan</td>
+                            <td>System Architect</td>
+                            <td>Cimahi</td>
+                            <td>61</td>
+                            <td>2011-04-25</td>
+                            <td>$1</td>
+                        </tr>
+                        <tr>
+                            <td>Fauzan</td>
+                            <td>System Architect</td>
+                            <td>Cimahi</td>
+                            <td>61</td>
+                            <td>2011-04-25</td>
+                            <td>$1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
+    @include('Component.Footer')
 @endsection
 {{-- <!DOCTYPE html>
 <html lang="en">

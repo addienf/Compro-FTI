@@ -6,7 +6,9 @@
 
 <div class="stroke navbar" id="mainNav">
     <button class="hamburger" id="hamburger">&#9776;</button>
-    <img src="img\itenass.png" width="100px" height="25px"alt="Logo image" />
+    <a href= "{{ url('Home') }}">
+        <img src="img\itenass.png" width="100px" height="25px"alt="Logo image" />
+    </a>
     <ul>
         <li><a href="{{ url('Fakultas') }}">Profil</a></li>
         <li><a href="{{ url('Akademik') }}">Akademik</a></li>

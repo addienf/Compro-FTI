@@ -39,99 +39,102 @@
                 {{ session('error') }}
             </div>
         @endif
-        <div class="card-container">
-            @foreach ($data as $pres)
-                <div class="card" style="background-image: url('{{ asset('img/' . $pres['ImgPrestasi']) }}');"
-                    onclick="">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $pres['JudulPrestasi'] }}</h5>
-                        <p class="card-text">{{ $pres['DescPrestasi'] }}</p>
-                        @auth
-                            <div class="d-flex justify-content-center align-items-center z-index-1">
-                                <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal"
-                                    data-bs-target="#editModal{{ $pres->IdPrestasi }}">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#deleteModal{{ $pres->IdPrestasi }}">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        @endauth
+        <div data-aos="fade-up">
+            <div class="card-container">
+                @foreach ($data as $pres)
+                    <div class="card" style="background-image: url('{{ asset('img/' . $pres['ImgPrestasi']) }}');"
+                        onclick="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $pres['JudulPrestasi'] }}</h5>
+                            <p class="card-text">{{ $pres['DescPrestasi'] }}</p>
+                            @auth
+                                <div class="d-flex justify-content-center align-items-center z-index-1">
+                                    <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal"
+                                        data-bs-target="#editModal{{ $pres->IdPrestasi }}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#deleteModal{{ $pres->IdPrestasi }}">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            @endauth
+                        </div>
                     </div>
-                </div>
 
-                {{-- Modals --}}
-                {{-- Delete Data --}}
-                <div class="modal fade" id="deleteModal{{ $pres->IdPrestasi }}" tabindex="-1" role="dialog"
-                    aria-labelledby="deleteModalLabel{{ $pres->IdPrestasi }}" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="deleteModalLabel{{ $pres->IdPrestasi }}">Konfirmasi Hapus
-                                </h5>
+                    {{-- Modals --}}
+                    {{-- Delete Data --}}
+                    <div class="modal fade" id="deleteModal{{ $pres->IdPrestasi }}" tabindex="-1" role="dialog"
+                        aria-labelledby="deleteModalLabel{{ $pres->IdPrestasi }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel{{ $pres->IdPrestasi }}">Konfirmasi Hapus
+                                    </h5>
+                                </div>
+                                <div class="modal-body">
+                                    Apakah Anda yakin ingin menghapus kegiatan ini?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <form action="{{ route('Prestasi.Destroy', $pres->IdPrestasi) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                Apakah Anda yakin ingin menghapus kegiatan ini?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                <form action="{{ route('Prestasi.Destroy', $pres->IdPrestasi) }}" method="POST">
+                        </div>
+                    </div>
+
+                    {{-- Edit Data --}}
+                    <div class="modal fade" id="editModal{{ $pres->IdPrestasi }}" tabindex="-1" role="dialog"
+                        aria-labelledby="editModalLabel{{ $pres->IdPrestasi }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel{{ $pres->IdPrestasi }}">Edit Kegiatan</h5>
+                                </div>
+                                <form action="{{ route('Prestasi.Update', $pres->IdPrestasi) }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                    @method('PUT')
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="judul-kegiatan" class="col-form-label d-flex flex-start">Judul
+                                                Kegiatan</label>
+                                            <input type="text" class="form-control" id="judul-kegiatan"
+                                                name="JudulPrestasi" value="{{ $pres->JudulPrestasi }}" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="deskripsi-kegiatan"
+                                                class="col-form-label d-flex flex-start">Deskripsi</label>
+                                            <textarea class="form-control" id="deskripsi-kegiatan" name="DescPrestasi" required>{{ $pres->DescPrestasi }}</textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="img-kegiatan" class="col-form-label d-flex flex-start">Dokumentasi
+                                                Kegiatan</label>
+                                            <input class="form-control" type="file" id="img-kegiatan"
+                                                name="ImgPrestasi" accept="image/*">
+                                            @if ($pres->ImgPrestasi)
+                                                <div class="mt-2">
+                                                    <img src="{{ asset('img/' . $pres->ImgPrestasi) }}"
+                                                        alt="Dokumentasi Prestasi" style="max-width: 200px;">
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {{-- Edit Data --}}
-                <div class="modal fade" id="editModal{{ $pres->IdPrestasi }}" tabindex="-1" role="dialog"
-                    aria-labelledby="editModalLabel{{ $pres->IdPrestasi }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $pres->IdPrestasi }}">Edit Kegiatan</h5>
-                            </div>
-                            <form action="{{ route('Prestasi.Update', $pres->IdPrestasi) }}" method="POST"
-                                enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label for="judul-kegiatan" class="col-form-label d-flex flex-start">Judul
-                                            Kegiatan</label>
-                                        <input type="text" class="form-control" id="judul-kegiatan" name="JudulPrestasi"
-                                            value="{{ $pres->JudulPrestasi }}" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="deskripsi-kegiatan"
-                                            class="col-form-label d-flex flex-start">Deskripsi</label>
-                                        <textarea class="form-control" id="deskripsi-kegiatan" name="DescPrestasi" required>{{ $pres->DescPrestasi }}</textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="img-kegiatan" class="col-form-label d-flex flex-start">Dokumentasi
-                                            Kegiatan</label>
-                                        <input class="form-control" type="file" id="img-kegiatan" name="ImgPrestasi"
-                                            accept="image/*">
-                                        @if ($pres->ImgPrestasi)
-                                            <div class="mt-2">
-                                                <img src="{{ asset('img/' . $pres->ImgPrestasi) }}"
-                                                    alt="Dokumentasi Prestasi" style="max-width: 200px;">
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
 
         {{-- Modals --}}
