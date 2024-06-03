@@ -18,46 +18,49 @@
             <a class="option active-option" href="{{ url('StudiIndependen') }}">Studi Independen</a>
         </div>
     </div>
-    <div class="container-table">
-        <table id="test" class="table table-striped " style="width:100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>NRP</th>
-                    <th>Nama</th>
-                    <th>Asal Prodi</th>
-                    <th>Tahun</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fauzan</td>
-                    <td>System Architect</td>
-                    <td>Cimahi</td>
-                    <td>61</td>
-                    <td>2011-04-25</td>
+    <div data-aos="fade-up">
+        <div class="container-table">
+            <table id="test" class="table table-striped " style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>NRP</th>
+                        <th>Nama</th>
+                        <th>Asal Prodi</th>
+                        <th>Tahun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fauzan</td>
+                        <td>System Architect</td>
+                        <td>Cimahi</td>
+                        <td>61</td>
+                        <td>2011-04-25</td>
 
-                </tr>
-                <tr>
-                    <td>Fauzan</td>
-                    <td>System Architect</td>
-                    <td>Cimahi</td>
-                    <td>61</td>
-                    <td>2011-04-25</td>
+                    </tr>
+                    <tr>
+                        <td>Fauzan</td>
+                        <td>System Architect</td>
+                        <td>Cimahi</td>
+                        <td>61</td>
+                        <td>2011-04-25</td>
 
-                </tr>
-                <tr>
-                    <td>Fauzan</td>
-                    <td>System Architect</td>
-                    <td>Cimahi</td>
-                    <td>61</td>
-                    <td>2011-04-25</td>
+                    </tr>
+                    <tr>
+                        <td>Fauzan</td>
+                        <td>System Architect</td>
+                        <td>Cimahi</td>
+                        <td>61</td>
+                        <td>2011-04-25</td>
 
-                </tr>
-            </tbody>
-        </table>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

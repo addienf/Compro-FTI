@@ -12,6 +12,7 @@
             </div>
         </div>
         <div class="akademik"> Program Sarjana </div>
+
         <div class="options-container-akademik">
             <a href="{{ url('Akademik') }}"><button class="options1">Sarjana</button></a>
             <a href="{{ url('Akademik2') }}"><button class="options">Pasca Sarjana</button></a>
@@ -39,33 +40,41 @@
                 </div>
             </div>
             <div class="card-akademik" style="width: 18rem;">
-                <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
-                <div class="card-content">
-                    <p class="card-text-akademik">Baik Sekali</p>
-                    <div class="card-little-akademik">Program Studi Teknik Kimia</div>
+                <div data-aos="fade-up" data-aos-duration="500">
+                    <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
+                    <div class="card-content">
+                        <p class="card-text-akademik">Baik Sekali</p>
+                        <div class="card-little-akademik">Program Studi Teknik Kimia</div>
+                    </div>
                 </div>
             </div>
             <div class="card-akademik" style="width: 18rem;">
-                <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
-                <div class="card-content">
-                    <p class="card-text-akademik">A</p>
-                    <div class="card-little-akademik">Program Studi Informatika</div>
+                <div data-aos="fade-up" data-aos-duration="700">
+                    <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
+                    <div class="card-content">
+                        <p class="card-text-akademik">A</p>
+                        <div class="card-little-akademik">Program Studi Informatika</div>
+                    </div>
                 </div>
             </div>
             <div class="card-akademik" style="width: 18rem;">
-                <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
-                <div class="card-content">
-                    <p class="card-text-akademik">B</p>
-                    <div class="card-little-akademik">Program Studi Sistem Informasi </div>
+                <div data-aos="fade-up" data-aos-duration="900">
+                    <img src="{{ asset('img\exp2.png') }}" class="card-img-top" alt="...">
+                    <div class="card-content">
+                        <p class="card-text-akademik">B</p>
+                        <div class="card-little-akademik">Program Studi Sistem Informasi </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="akademik"> Jadwal Ujian</div>
-        <div class="ujian"> </div>
-        <div class="akademik"> Kalender Akademik</div>
-        <div class="kalender"> </div>
-        <div class="akademik"> Kebijakan dan Peraturan Akademik</div>
-        <div class="bijak"> </div>
+        <div data-aos="fade-up">
+            <div class="akademik"> Jadwal Ujian</div>
+            <div class="ujian"> </div>
+            <div class="akademik"> Kalender Akademik</div>
+            <div class="kalender"> </div>
+            <div class="akademik"> Kebijakan dan Peraturan Akademik</div>
+            <div class="bijak"> </div>
+        </div>
     </div>
     @include('Component.Footer')
 @endsection

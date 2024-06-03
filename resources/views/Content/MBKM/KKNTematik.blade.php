@@ -34,127 +34,130 @@
                     Data</a>
             </div>
         @endauth
-
-        <div class="container-table">
-            <table id="test" class="table table-striped " style="width:100%">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>NRP</th>
-                        <th>Nama</th>
-                        <th>Lokasi</th>
-                        <th>Judul</th>
-                        <th>Periode</th>
-                        @auth
-                            <th>Action</th>
-                        @endauth
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $index => $kkn)
+        <div data-aos="fade-up">
+            <div class="container-table">
+                <table id="test" class="table table-striped " style="width:100%">
+                    <thead>
                         <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $kkn['NIM'] }}</td>
-                            <td>{{ $kkn['Nama'] }}</td>
-                            <td>{{ $kkn['Lokasi'] }}</td>
-                            <td>{{ $kkn['Judul'] }}</td>
-                            <td>{{ $kkn['Periode'] }}</td>
+                            <th>No</th>
+                            <th>NRP</th>
+                            <th>Nama</th>
+                            <th>Lokasi</th>
+                            <th>Judul</th>
+                            <th>Periode</th>
                             @auth
-                                <td>
-                                    <div class="d-flex justify-content-center mt-1">
-                                        <a class="btn-primary mx-2 fa-solid fa-pen-to-square p-1" data-bs-toggle="modal"
-                                            data-bs-target="#editModal{{ $kkn->IdMBKM }}"></a>
-                                        <a class="btn-danger mx-2 fas fa-trash p-1" data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal{{ $kkn->IdMBKM }}"></a>
-                                    </div>
-                                </td>
+                                <th>Action</th>
                             @endauth
                         </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $index => $kkn)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $kkn['NIM'] }}</td>
+                                <td>{{ $kkn['Nama'] }}</td>
+                                <td>{{ $kkn['Lokasi'] }}</td>
+                                <td>{{ $kkn['Judul'] }}</td>
+                                <td>{{ $kkn['Periode'] }}</td>
+                                @auth
+                                    <td>
+                                        <div class="d-flex justify-content-center mt-1">
+                                            <a class="btn-primary mx-2 fa-solid fa-pen-to-square p-1" data-bs-toggle="modal"
+                                                data-bs-target="#editModal{{ $kkn->IdMBKM }}"></a>
+                                            <a class="btn-danger mx-2 fas fa-trash p-1" data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal{{ $kkn->IdMBKM }}"></a>
+                                        </div>
+                                    </td>
+                                @endauth
+                            </tr>
 
-                        {{-- Modals --}}
-                        {{-- Delete Data --}}
-                        <div class="modal fade" id="deleteModal{{ $kkn->IdMBKM }}" tabindex="-1" role="dialog"
-                            aria-labelledby="deleteModalLabel{{ $kkn->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="deleteModalLabel{{ $kkn->IdMBKM }}">Konfirmasi
-                                            Hapus
-                                        </h5>
-                                    </div>
-                                    <div class="modal-body">
-                                        Apakah Anda yakin ingin menghapus kegiatan ini?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <form action="{{ route('KKN.Destroy', $kkn->IdMBKM) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="modal fade" id="editModal{{ $kkn->IdMBKM }}" tabindex="-1" role="dialog"
-                            aria-labelledby="editModalLabel{{ $kkn->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel{{ $kkn->IdMBKM }}">Edit Kegiatan
-                                        </h5>
-                                    </div>
-                                    <form action="{{ route('KKN.Update', $kkn->IdMBKM) }}" method="POST"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        @method('PUT')
+                            {{-- Modals --}}
+                            {{-- Delete Data --}}
+                            <div class="modal fade" id="deleteModal{{ $kkn->IdMBKM }}" tabindex="-1" role="dialog"
+                                aria-labelledby="deleteModalLabel{{ $kkn->IdMBKM }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel{{ $kkn->IdMBKM }}">Konfirmasi
+                                                Hapus
+                                            </h5>
+                                        </div>
                                         <div class="modal-body">
-                                            <div class="mb-3">
-                                                <label for="nrp-magang" class="col-form-label d-flex flex-start">NRP</label>
-                                                <input type="text" class="form-control" id="nrp-magang" name="NIM"
-                                                    value="{{ $kkn->NIM }}" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="nama-magang" class="col-form-label d-flex flex-start">Nama
-                                                    Mahasiswa</label>
-                                                <input type="text" class="form-control" id="nama-magang" name="Nama"
-                                                    value="{{ $kkn->Nama }}" required></input>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="lokasi-perusahaan-magang"
-                                                    class="col-form-label d-flex flex-start">Lokasi
-                                                    Perusahaan</label>
-                                                <input type="text" class="form-control" id="lokasi-perusahaan-magang"
-                                                    value="{{ $kkn->Lokasi }}" name="Lokasi" required></input>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="judul-project-magang"
-                                                    class="col-form-label d-flex flex-start">Judul
-                                                    Project</label>
-                                                <input type="text" class="form-control" id="judul-project-magang"
-                                                    value="{{ $kkn->Judul }}" name="Judul" required></input>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="periode-magang"
-                                                    class="col-form-label d-flex flex-start">Periode</label>
-                                                <input type="text" class="form-control" id="periode-magang"
-                                                    value="{{ $kkn->Periode }}" name="Periode" required></input>
-                                            </div>
+                                            Apakah Anda yakin ingin menghapus kegiatan ini?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                            <form action="{{ route('KKN.Destroy', $kkn->IdMBKM) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                            </form>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </tbody>
-            </table>
+
+                            <div class="modal fade" id="editModal{{ $kkn->IdMBKM }}" tabindex="-1" role="dialog"
+                                aria-labelledby="editModalLabel{{ $kkn->IdMBKM }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel{{ $kkn->IdMBKM }}">Edit Kegiatan
+                                            </h5>
+                                        </div>
+                                        <form action="{{ route('KKN.Update', $kkn->IdMBKM) }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="nrp-magang"
+                                                        class="col-form-label d-flex flex-start">NRP</label>
+                                                    <input type="text" class="form-control" id="nrp-magang"
+                                                        name="NIM" value="{{ $kkn->NIM }}" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="nama-magang" class="col-form-label d-flex flex-start">Nama
+                                                        Mahasiswa</label>
+                                                    <input type="text" class="form-control" id="nama-magang"
+                                                        name="Nama" value="{{ $kkn->Nama }}" required></input>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="lokasi-perusahaan-magang"
+                                                        class="col-form-label d-flex flex-start">Lokasi
+                                                        Perusahaan</label>
+                                                    <input type="text" class="form-control"
+                                                        id="lokasi-perusahaan-magang" value="{{ $kkn->Lokasi }}"
+                                                        name="Lokasi" required></input>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="judul-project-magang"
+                                                        class="col-form-label d-flex flex-start">Judul
+                                                        Project</label>
+                                                    <input type="text" class="form-control" id="judul-project-magang"
+                                                        value="{{ $kkn->Judul }}" name="Judul" required></input>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="periode-magang"
+                                                        class="col-form-label d-flex flex-start">Periode</label>
+                                                    <input type="text" class="form-control" id="periode-magang"
+                                                        value="{{ $kkn->Periode }}" name="Periode" required></input>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         {{-- Modals --}}
@@ -205,4 +208,5 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection
