@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    
+
 }
 
 /* button */
@@ -26,7 +26,7 @@ body {
     transition: all 0.4s;
     margin-top: 10px;
     margin-bottom: -20px;
- 
+
 }
 
 .option:hover {
@@ -150,6 +150,7 @@ body {
 
 .thumb {
     width: 100%;
+    height: 380px;
 }
 
 .main-news {
@@ -206,8 +207,8 @@ body {
     background-color: transparent;
 }
 
-.main-news{
-    background-color: #EEEAF5 ;
+.main-news {
+    background-color: #EEEAF5;
     width: 100px;
 }
 
@@ -220,12 +221,12 @@ body {
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
-    font-weight:bold;
+    font-weight: bold;
     justify-content: start;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.banner {
+/* .banner {
     padding: 10px;
     margin-left: 25%;
     margin-right: 5px;
@@ -234,9 +235,9 @@ body {
     margin-top: 50px;
     text-decoration: white;
 
-}
+} */
 
-.font{
+.font {
     text-decoration: white;
 }
 
@@ -254,4 +255,154 @@ body {
     background-blend-mode: darken
     bac */
     background-color: aliceblue;
+}
+
+/* Banner Baru */
+.banner {
+    position: relative;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fact {
+    margin: 10px;
+    text-align: center;
+}
+
+.fact i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.fact h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Card */
+.card-container {
+    width: 1250px;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5em;
+}
+
+.card {
+    display: grid;
+    position: relative;
+    grid-template-columns: auto 1fr;
+    box-shadow: 5px 5px 10px rgba(85, 85, 85, 0.2);
+    margin: 1em 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+    padding: 1em;
+    border-radius: 30px;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #0b0028;
+}
+
+.card-text {
+    color: #6f6f6f;
+    text-align: justify;
+    margin: 0.8em 0 1em 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-view {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    color: #EB890A;
+    width: 9em;
+    text-align: center;
+    padding: 0.3em 0.2em;
+    border-radius: 5px;
+}
+
+/* Bawah Baru */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.news-item {
+    margin-bottom: 20px;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 1100px) {
+    .card-container {
+        width: 75%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 3em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card-container {
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 1em;
+    }
 }

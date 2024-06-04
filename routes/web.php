@@ -4,6 +4,7 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\LombaController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KerjasamaController;
 use App\Http\Controllers\MBKMController;
 use App\Http\Controllers\PenelitianController;
@@ -21,22 +22,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Landing & Berita
-Route::get('/Home', function () {
-    return view('Content.home');
-});
+Route::get('/', [BeritaController::class, 'index']);
+// Route::get('/Home', function () {
+//     return view('Content.home');
+// });
 
-Route::get('/Berita', function () {
-    return view('Content.dashboard-berita');
-});
+Route::get('/Berita', [BeritaController::class, 'indexBerita']);
+Route::get('/addBerita', [BeritaController::class, 'createBerita']);
+Route::post('/addBerita', [BeritaController::class, 'storeBerita']);
+Route::get('/Berita/{id}/edit', [BeritaController::class, 'editBerita'])->name('Berita.Edit');
+Route::put('/Berita/{id}', [BeritaController::class, 'updateBerita'])->name('Berita.Update');
+Route::delete('Berita/{id}', [BeritaController::class, 'destroyBerita'])->name('Berita.Destroy');
 
-Route::get('/Berita-d', function () {
-    return view('Content.berita-detail');
-});
+Route::get('/Berita-d/{id}', [BeritaController::class, 'detailBerita']);
 
 Route::get('/Fakultas', function () {
     return view('Content.dashboard-vismis');
@@ -156,25 +155,25 @@ Route::put('/KKNTematik/{id}', [MBKMController::class, 'updateKKN'])->name('KKN.
 Route::delete('KKNTematik/{id}', [MBKMController::class, 'destroyKKN'])->name('KKN.Destroy');
 
 Route::get('/Penelitian-MBKM', [MBKMController::class, 'indexPenelitian']);
-Route::get('/addPenelitian', [MBKMController::class, 'createPenelitian']);
-Route::post('/addPenelitian', [MBKMController::class, 'storePenelitian']);
-Route::get('/PenelitianTematik/{id}/edit', [MBKMController::class, 'editPenelitian'])->name('Penelitian.Edit');
-Route::put('/PenelitianTematik/{id}', [MBKMController::class, 'updatePenelitian'])->name('Penelitian.Update');
-Route::delete('PenelitianTematik/{id}', [MBKMController::class, 'destroyPenelitian'])->name('Penelitian.Destroy');
+Route::get('/addPenelitianMBKM', [MBKMController::class, 'createPenelitian']);
+Route::post('/addPenelitianMBKM', [MBKMController::class, 'storePenelitian']);
+Route::get('/Penelitian-MBKM/{id}/edit', [MBKMController::class, 'editPenelitian'])->name('PenelitianMBKM.Edit');
+Route::put('/Penelitian-MBKM/{id}', [MBKMController::class, 'updatePenelitian'])->name('PenelitianMBKM.Update');
+Route::delete('Penelitian-MBKM/{id}', [MBKMController::class, 'destroyPenelitian'])->name('PenelitianMBKM.Destroy');
 
 Route::get('/PKM-MBKM', [MBKMController::class, 'indexPKM']);
-Route::get('/addPKM', [MBKMController::class, 'createPKM']);
-Route::post('/addPKM', [MBKMController::class, 'storePKM']);
-Route::get('/PKM/{id}/edit', [MBKMController::class, 'editPKM'])->name('PKM.Edit');
-Route::put('/PKM/{id}', [MBKMController::class, 'updatePKM'])->name('PKM.Update');
-Route::delete('PKM/{id}', [MBKMController::class, 'destroyPKM'])->name('PKM.Destroy');
+Route::get('/addPKMMBKM', [MBKMController::class, 'createPKM']);
+Route::post('/addPKMMBKM', [MBKMController::class, 'storePKM']);
+Route::get('/PKM-MBKM/{id}/edit', [MBKMController::class, 'editPKM'])->name('PKMMBKM.Edit');
+Route::put('/PKM-MBKM/{id}', [MBKMController::class, 'updatePKM'])->name('PKMMBKM.Update');
+Route::delete('PKM-MBKM/{id}', [MBKMController::class, 'destroyPKM'])->name('PKMMBKM.Destroy');
 
 Route::get('/Kewirausahaan', [MBKMController::class, 'indexKewirus']);
 Route::get('/addKewirus', [MBKMController::class, 'createKewirus']);
 Route::post('/addKewirus', [MBKMController::class, 'storeKewirus']);
-Route::get('/KewirusTematik/{id}/edit', [MBKMController::class, 'editKewirus'])->name('Kewirus.Edit');
-Route::put('/KewirusTematik/{id}', [MBKMController::class, 'updateKewirus'])->name('Kewirus.Update');
-Route::delete('KewirusTematik/{id}', [MBKMController::class, 'destroyKewirus'])->name('Kewirus.Destroy');
+Route::get('/Kewirus/{id}/edit', [MBKMController::class, 'editKewirus'])->name('Kewirus.Edit');
+Route::put('/Kewirus/{id}', [MBKMController::class, 'updateKewirus'])->name('Kewirus.Update');
+Route::delete('Kewirus/{id}', [MBKMController::class, 'destroyKewirus'])->name('Kewirus.Destroy');
 
 Route::get('/AsistenManajer', [MBKMController::class, 'indexAsisten']);
 Route::get('/addAsist', [MBKMController::class, 'createAsist']);
