@@ -1,6 +1,6 @@
 <!-- Footer -->
 <link rel="stylesheet" href="{{ asset('css\footer.css') }}">
-<div class="tittle"> Kerjasama</div>
+<div class="tittle" data-aos="zoom-out-up"> Kerjasama</div>
 <div data-aos="zoom-out-up">
     <div class="sponsor-card-container">
 

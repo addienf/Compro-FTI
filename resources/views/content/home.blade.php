@@ -35,6 +35,7 @@
         </button>
     </div>
     <!-- end carosel -->
+
     <!-- pengumuman -->
     <div class="container-fluid" id="container-fluid">
         <div class="options-container ">
@@ -42,41 +43,23 @@
             <a class="option active-option" href="{{ url('Magang') }}">Acara Selanjutnya</a>
         </div>
         <div data-aos="fade-up">
-            <div class="container">
-            </div>
-            <div class="row mt-5">
-                <div class="col-4">
-                    <div class="card">
-                        <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
+            <div class="card-container mt-3">
+                @foreach ($data as $berita)
+                    <div class="card" style="">
+                        <img src="{{ asset('img/' . $berita['ImgBerita']) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">20/04/24</p>
-                            <a href="#" class="btn btn-dark">Selengkapnya</a>
+                            <h5 class="card-title">{{ $berita['Judul'] }}</h5>
+                            <h5 class="card-title">{{ $berita['Tanggal'] }}</h5>
+                            <p class="card-text">
+                                {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn-view" data-bs-toggle="modal"
+                                    data-bs-target="">Selengkapnya</button>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">20/04/24</p>
-                            <a href="#" class="btn btn-dark">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-4">
-                    <div class="card">
-                        <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">20/04/24</p>
-                            <a href="#" class="btn btn-dark">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -111,104 +94,67 @@
     <!-- end tentang fti -->
 
     <!-- banner -->
-    <div class="">
-        <div class="card text-bg-dark mb-10">
-            <img src ="{{ asset('assets\fakta.png') }}" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="banner">
-                    <div data-aos="fade-up">
-                        <div class="row ml-10" style = "color: #fff">
-                            <div class="col-2">
-                                <i class="fa-solid fa-building-columns" style = "color: #fff"></i>
-                                <h2>Berdiri Tahun 1933</h2>
-                            </div>
-                            <div class="col-2">
-                                <i class="fa-solid fa-book-bookmark"style="color: #fff"></i>
-                                <h2>Jumlah Prodi 8</h2>
-                            </div>
-                            <div class="col-2">
-                                <i class="fa-solid fa-flask-vial "style="color: #fff"></i>
-                                <h2>Labs 64+</h2>
-                            </div>
-                            <div class="col-2">
-                                <i class="fa-solid fa-graduation-cap"style="color: #fff"></i>
-                                <h2>120 Kelompok Keahlian</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="banner" style="background-image: url('assets/fakta.png');" data-aos="fade-up">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="fact">
+                <i class="fa-solid fa-building-columns"></i>
+                <h2>Berdiri Tahun 1933</h2>
+            </div>
+            <div class="fact">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <h2>Jumlah Prodi 8</h2>
+            </div>
+            <div class="fact">
+                <i class="fa-solid fa-flask-vial"></i>
+                <h2>Labs 64+</h2>
+            </div>
+            <div class="fact">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>120 Kelompok Keahlian</h2>
             </div>
         </div>
-
     </div>
     <!-- end banner -->
 
     <!--berita-->
-
     <div class="">
-        <div class="main-news mt-5 w-100">
+        <div class="main-news mt-5 w-100" data-aos="fade-up">
             <div class="containercard">Berita Terkini</div>
-            <div data-aos="fade-up">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
-                        <img class="thumb mb-3" src="assets\pexels-pixabay-247823.jpg" alt="">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+                    @if ($main)
+                        <img class="thumb mb-3" src="{{ asset('img/' . $main['ImgBerita']) }}" alt="">
                         <h3>
                             <a class="font-medium" href="">
-                                Juara 1 International
+                                {{ $main['Judul'] }}
                             </a>
                         </h3>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-                                <div class="image image-sm mb-1">
-                                    <img src="assets\pexels-pixabay-247823.jpg" alt="">
-                                </div>
-                                <h3 class="mb-4">
-                                    <a class="font-medium" href="">
-                                        Hibah Alat Praktikum FTI terbaru 2024 oleh pddikti jawabarat
-                                    </a>
-                                </h3>
-
-                                <div class="image image-sm mb-1">
-                                    <img src="assets\pexels-pixabay-247823.jpg" alt="">
-                                </div>
-                                <h3 class="mb-4">
-                                    <a class="font-medium" href="">
-                                        Akreditasi Prodi Sistem Informasi terbaru tahun 2024
-                                    </a>
-                                </h3>
+                    @endif
+                </div>
+                <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
+                    <div class="news-container">
+                        @foreach ($sec->chunk(2) as $chunk)
+                            <div class="news-column">
+                                @foreach ($chunk as $brt)
+                                    <div class="news-item">
+                                        <div class="image image-sm mb-1 mx-2">
+                                            <img src="{{ asset('img/' . $brt->ImgBerita) }}" alt="">
+                                        </div>
+                                        <h3 class="mb-4">
+                                            <a class="font-medium" href="">
+                                                {{ $brt->Judul }}
+                                            </a>
+                                        </h3>
+                                    </div>
+                                @endforeach
                             </div>
-
-                            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-                                <div class="image image-sm mb-1">
-                                    <img src="assets\pexels-pixabay-247823.jpg" alt="">
-                                </div>
-                                <h3 class="mb-4">
-                                    <a class="font-medium" href="">
-                                        Program Magang Fakultas FTI telah diuka untuk umum
-                                    </a>
-                                </h3>
-
-                                <div class="image image-sm mb-1">
-                                    <img src="assets\pexels-pixabay-247823.jpg" alt="">
-                                </div>
-                                <h3 class="mb-4">
-                                    <a class="font-medium" href="">
-                                        Penghargaan untuk fakultas fti yang telah menyelesaikan akreditasi
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!--berita-->
-
-
-
     @include('Component.Footer')
 @endsection

@@ -71,7 +71,9 @@
             <div class="akademik"> Jadwal Ujian</div>
             <div class="ujian"> </div>
             <div class="akademik"> Kalender Akademik</div>
-            <div class="kalender"> </div>
+            <div class="kalender">
+                <img src="{{ asset('img\4131abea-ca2c-4d1f-9087-d5cdb9a81e60.jpeg') }}" alt="">
+            </div>
             <div class="akademik"> Kebijakan dan Peraturan Akademik</div>
             <div class="bijak"> </div>
         </div>

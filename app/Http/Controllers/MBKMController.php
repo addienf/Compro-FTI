@@ -148,7 +148,7 @@ class MBKMController extends Controller
         $input = $request->all();
         $input['IdJenisMBKM'] = 4;
         MBKM::create($input);
-        return redirect('Penelitian')->with('success', 'Data berhasil ditambahkan.');;
+        return redirect('Penelitian-MBKM')->with('success', 'Data berhasil ditambahkan.');;
     }
 
     public function editPenelitian($id)

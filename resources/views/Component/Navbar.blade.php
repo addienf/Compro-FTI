@@ -6,7 +6,7 @@
 
 <div class="stroke navbar" id="mainNav">
     <button class="hamburger" id="hamburger">&#9776;</button>
-    <a href= "{{ url('Home') }}">
+    <a href= "{{ url('/') }}">
         <img src="img\itenass.png" width="100px" height="25px"alt="Logo image" />
     </a>
     <ul>
@@ -21,6 +21,7 @@
 </div>
 <div class="navbottom stroke">
     <ul>
+        <li><a href="{{ url('Berita') }}">Berita</a></li>
         <li><a href="{{ url('Penelitian') }}">Penelitian</a></li>
         <li><a href="{{ url('PKM') }}">PKM</a></li>
         <li><a href="{{ url('Publikasi') }}">Publikasi</a></li>
