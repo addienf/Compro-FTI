@@ -8,7 +8,19 @@
     </div>
     <div class="body">
         <div class="options-container">
-            <a class="option active-option" href="{{ url('PMM') }}">Pertukaran Mahasiswa</a>
+            <a class="option dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Pertukaran Mahasiswa
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="option dropdown-item active-option" href="{{ url('PMM') }}">Pertukaran Mahasiswa
+                        Inbound</a>
+                </li>
+                <li><a class="option dropdown-item active-option" href="{{ url('PMM') }}">Pertukaran Mahasiswa
+                        Outbound</a>
+                </li>
+            </ul>
+            {{-- <a class="option active-option" href="{{ url('PMM') }}">Pertukaran Mahasiswa</a> --}}
             <a class="option active-option" href="{{ url('Magang') }}">Magang</a>
             <a class="option active-option" href="{{ url('KKNTematik') }}">KKN Tematik</a>
             <a class="option active-option" href="{{ url('Penelitian-MBKM') }}">Penelitian</a>
@@ -116,8 +128,8 @@
                                             <div class="mb-3">
                                                 <label for="nama-magang" class="col-form-label d-flex flex-start">Nama
                                                     Mahasiswa</label>
-                                                <input type="text" class="form-control" id="nama-magang" name="Nama"
-                                                    value="{{ $pmm->Nama }}" required></input>
+                                                <input type="text" class="form-control" id="nama-magang"
+                                                    name="Nama" value="{{ $pmm->Nama }}" required></input>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="asal-prodi-pmm" class="col-form-label d-flex flex-start">Nama
@@ -187,6 +199,37 @@
             </div>
         </div>
     </div>
-    <script src="js/dropdown.js"></script>
+    {{-- <script src="js/dropdown.js"></script> --}}
+    <script>
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const select = dropdown.querySelector('.select');
+            const caret = dropdown.querySelector('.caret');
+            const menu = dropdown.querySelector('.menu');
+            const options = dropdown.querySelectorAll('.menu li');
+            const selected = dropdown.querySelector('.selected');
+
+            select.addEventListener('click', () => {
+                console.log('Select clicked');
+                select.classList.toggle('select-clicked');
+                caret.classList.toggle('caret-rotate');
+                menu.classList.toggle('menu-open');
+            })
+
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    selected.innerText = option.innerText;
+                    select.classList.remove('select-clicked');
+                    caret.classList.remove('caret-rotate');
+                    menu.classList.remove('menu-open');
+                    options.forEach(option => {
+                        option.classList.remove('active');
+                    });
+                    option.classList.add('active');
+                });
+            });
+        });
+    </script>
     @include('Component.Footer')
 @endsection
