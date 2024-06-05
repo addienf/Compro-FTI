@@ -27,6 +27,9 @@
                     PKM</a>
             @endauth
         </div>
+        <div class="btn-tambah mt-3">
+            <h3 class="w-100">PKM</h3>
+        </div>
         @if (session('success'))
             <div class="alert alert-success p-1" id="successMessage">
                 {{ session('success') }}

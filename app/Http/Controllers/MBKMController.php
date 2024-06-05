@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JenisPertukaran;
 use App\Models\MBKM;
 use Illuminate\Http\Request;
 
@@ -10,14 +11,35 @@ class MBKMController extends Controller
     // PMM
     public function indexPMM()
     {
-        //
-        $data = MBKM::where('IdJenisMBKM', 1)->get();
-        return view('Content.MBKM.PMM1', compact('data'));
+        $data = MBKM::where('IdJenisMBKM', 1)
+            ->where('IdJenisPertukaran', 1)
+            ->get();
+        $data2 = JenisPertukaran::all();
+        return view('Content.MBKM.PMM1', compact('data', 'data2'));
+    }
+
+    public function indexIn()
+    {
+        $data = MBKM::where('IdJenisMBKM', 1)
+            ->where('IdJenisPertukaran', 2)
+            ->get();
+        $data2 = JenisPertukaran::all();
+        return view('Content.MBKM.PMM2', compact('data', 'data2'));
+    }
+
+    public function indexOut()
+    {
+        $data = MBKM::where('IdJenisMBKM', 1)
+            ->where('IdJenisPertukaran', 3)
+            ->get();
+        $data2 = JenisPertukaran::all();
+        return view('Content.MBKM.PMM3', compact('data', 'data2'));
     }
 
     public function createPMM()
     {
-        return view('Content.MBKM.PMM1');
+        $data2 = JenisPertukaran::all();
+        return view('Content.MBKM.PMM1', compact('data2'));
     }
 
     public function storePMM(Request $request)
@@ -25,7 +47,7 @@ class MBKMController extends Controller
         $input = $request->all();
         $input['IdJenisMBKM'] = 1;
         MBKM::create($input);
-        return redirect('PMM')->with('success', 'Data berhasil ditambahkan.');;
+        return redirect('PMM')->with('success', 'Data berhasil ditambahkan.');
     }
 
     public function editPMM($id)

@@ -92,22 +92,15 @@
                         </div>
                     </div>
                     <div class="col-sm-4">
+                        <img src="assets\pexels-wildlittlethingsphoto-3471028.jpg" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <h3>Jono Sunjoyo</h3>
+                            <h5>Bachelor of Information System</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
                         <img src="https://dosenit.com/wp-content/uploads/2020/10/140185_1234217273488_400_300.jpg"
                             alt="Avatar" class="image">
-                        <div class="overlay">
-                            <h3>Jono Sunjoyo</h3>
-                            <h5>Bachelor of Information System</h5>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="assets\pexels-wildlittlethingsphoto-3471028.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <h3>Jono Sunjoyo</h3>
-                            <h5>Bachelor of Information System</h5>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="assets\pexels-wildlittlethingsphoto-3471028.jpg" alt="Avatar" class="image">
                         <div class="overlay">
                             <h3>Jono Sunjoyo</h3>
                             <h5>Bachelor of Information System</h5>
