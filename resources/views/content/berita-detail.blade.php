@@ -43,33 +43,29 @@
 
         <div class="container-fluid">
             <h4>Baca Juga</h4>
-            <div class="card-container">
-                <div class="card">
-                    <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">20/04/24</p>
-                        <a href="#" class="btn btn-dark">Selengkapnya</a>
+            <div class="card-container mt-3">
+                @foreach ($data as $berita)
+                    <div class="card" style="">
+                        <img src="{{ asset('img/' . $berita['ImgBerita']) }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $berita['Judul'] }}</h5>
+                            <h5 class="card-title">{{ $berita['Tanggal'] }}</h5>
+                            <p class="card-text">
+                                {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn-view" data-bs-toggle="modal" data-bs-target=""
+                                    id="beritaButton"
+                                    data-url="{{ url('Berita-d/' . $berita->IdBerita) }}">Selengkapnya</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">20/04/24</p>
-                        <a href="#" class="btn btn-dark">Selengkapnya</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets\pexels-pixabay-247823.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">20/04/24</p>
-                        <a href="#" class="btn btn-dark">Selengkapnya</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <button type="button" class="btn btn-dark btn-sm m-5">Berita Lainnya</button>
+            <div class="m-5">
+                <a href="{{ url('Berita') }}" class="btn-view px-3 py-2" style="border: 2px solid #252525;">Berita
+                    Lainya</a>
+            </div>
         </div>
         <!-- end pengumuman -->
     </div>

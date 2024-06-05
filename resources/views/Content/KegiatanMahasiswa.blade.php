@@ -189,6 +189,8 @@
                                     Kegiatan</label>
                                 <input class="form-control" type="file" id="img-kegiatan" name="ImgKegiatan" required
                                     accept="image/*">
+                                <label for="img-kegiatan" class="col-form-label d-flex flex-start">Tipe file yang
+                                    diterima: jpg, png, jpeg</label>
                             </div>
                         </div>
                         <div class="modal-footer mt-2">

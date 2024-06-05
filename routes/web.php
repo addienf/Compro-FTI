@@ -126,6 +126,8 @@ Route::get('/Dokumen', function () {
 
 // MBKM
 Route::get('/PMM', [MBKMController::class, 'indexPMM']);
+Route::get('/PMM-In', [MBKMController::class, 'indexIn']);
+Route::get('/PMM-Out', [MBKMController::class, 'indexOut']);
 Route::get('/addPMM', [MBKMController::class, 'createPMM']);
 Route::post('/addPMM', [MBKMController::class, 'storePMM']);
 Route::get('/PMM/{id}/edit', [MBKMController::class, 'editPMM'])->name('PMM.Edit');

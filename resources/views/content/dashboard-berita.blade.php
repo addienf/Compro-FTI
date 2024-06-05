@@ -65,10 +65,9 @@
                                 {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
                             </p>
                             <div class="d-flex justify-content-between">
-                                <a href="{{ 'Berita-d/' . $berita->IdBerita }}" class="btn-view">Selengkapnya</a>
-                                {{-- <button type="submit" class="btn-view no-underlines" data-bs-toggle="modal">
-
-                                </button> --}}
+                                <button type="submit" class="btn-view" data-bs-toggle="modal" data-bs-target=""
+                                    id="beritaButton"
+                                    data-url="{{ url('Berita-d/' . $berita->IdBerita) }}">Selengkapnya</button>
                                 @auth
                                     <div class="d-flex justify-content-center align-items-center">
                                         <button type="button" class="btn btn-primary mx-2" data-toggle="modal"

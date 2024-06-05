@@ -3,7 +3,7 @@
 @section('content')
     @include('Component.Navbar')
     <!-- carosel -->
-    <div id="carouselExampleIndicators" class="carousel slide ">
+    <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -14,13 +14,14 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets\pexels-pixabay-247823.jpg" class="d-block w-100 h-20" alt="...">
+                <img src="assets\pexels-pixabay-247823.jpg" class="d-block w-100 h-20 img-fluid" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="assets\pexels-pixabay-267885.jpg" class="d-block w-100 h-20" alt="...">
+                <img src="assets\pexels-pixabay-267885.jpg" class="d-block w-100 h-20 img-fluid" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="assets\pexels-wildlittlethingsphoto-3471028.jpg" class="d-block w-100 h-20" alt="...">
+                <img src="assets\pexels-wildlittlethingsphoto-3471028.jpg" class="d-block w-100 h-20 img-fluid"
+                    alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -54,8 +55,9 @@
                                 {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
                             </p>
                             <div class="d-flex justify-content-between">
-                                <button type="submit" class="btn-view" data-bs-toggle="modal"
-                                    data-bs-target="">Selengkapnya</button>
+                                <button type="submit" class="btn-view" data-bs-toggle="modal" data-bs-target=""
+                                    id="beritaButton"
+                                    data-url="{{ url('Berita-d/' . $berita->IdBerita) }}">Selengkapnya</button>
                             </div>
                         </div>
                     </div>

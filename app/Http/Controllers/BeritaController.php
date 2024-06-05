@@ -112,6 +112,6 @@ class BeritaController extends Controller
     {
         $detail = Berita::findOrFail($id);
         $data = Berita::latest()->take(3)->get();
-        return view('Content.berita-detail', compact('detail'));
+        return view('Content.berita-detail', compact('detail', 'data'));
     }
 }
