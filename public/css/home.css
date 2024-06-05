@@ -1,0 +1,408 @@
+body {
+    background-color: white;
+
+}
+
+/* button */
+.options-container {
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    column-gap: 1rem;
+    /* margin: 2rem 0 2rem 0 !important; */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.option {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+    text-decoration: none;
+    background: #331A5D;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 4px;
+    transition: all 0.4s;
+    margin-top: 10px;
+    margin-bottom: -20px;
+
+}
+
+.option:hover {
+    background-color: white;
+    color: #331A5D;
+}
+
+.option1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+    text-decoration: none;
+    background: #331A5D;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 4px;
+    transition: all 0.4s;
+    margin-top: 10px;
+    margin-bottom: -20px;
+
+}
+
+.option1:hover {
+    background-color: white;
+    color: #331A5D;
+}
+
+
+.container-fluid {
+    background-color: #EEEAF5;
+    width: 80vw;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.container-fluid .row {
+    margin: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.row .col-2 {
+    text-align: center;
+}
+
+.row .col-2 i {
+    margin: 50px;
+    font-size: 3rem;
+}
+
+.row .col-2 h2 {
+    font-size: medium;
+}
+
+.container-fluid .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}
+
+.container-fluid .kerjasama img {
+    width: 100px;
+    height: auto;
+    margin: 50px;
+}
+
+/* end dashboard-home*/
+
+#container-fluid .container {
+    max-width: 280px;
+    float: left;
+}
+
+#container-fluid .container #btn-p {
+    background-color: #261446;
+    color: #EEEAF5;
+    border: none;
+}
+
+#container-fluid .container #btn-a {
+    background-color: #CABEE0;
+    border: none;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.card-body a {
+    background-color: #EB890A;
+    border: none;
+    float: right;
+}
+
+.col-md-7 {
+    margin-right: 50px;
+    margin-left: 0;
+    text-align: left;
+}
+
+.col-md-7 button {
+    background-color: #261446;
+    border: none;
+}
+
+.col-md-2 img {
+    width: 15vw;
+    height: 200px;
+    margin-top: 5rem;
+    object-fit: cover;
+}
+
+#fti {
+    background-color: transparent;
+}
+
+
+.thumb {
+    width: 100%;
+    height: 380px;
+}
+
+.main-news {
+    margin-top: 50px;
+    padding: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px -5px -10px rgba(0, 0, 0, 0.2);
+}
+
+.main-news a {
+    color: #020202;
+}
+
+.main-news h3 {
+    line-height: 1.5;
+}
+
+.main-news h3 a {
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 600;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.image {
+    overflow: hidden;
+}
+
+.image-sm {
+    max-height: 160px;
+}
+
+.image-sm img {
+    height: 180px;
+}
+
+.image-xs {
+    max-height: 160px;
+}
+
+.image-xxs {
+    max-height: 100px;
+}
+
+.font-large {
+    font-size: 0.9em !important;
+    font-weight: 600 !important;
+}
+
+#kerjasama {
+    background-color: transparent;
+}
+
+.main-news {
+    background-color: #EEEAF5;
+    width: 100px;
+}
+
+.containercard {
+    padding: 5px;
+    background-color: white;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: start;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* .banner {
+    padding: 10px;
+    margin-left: 25%;
+    margin-right: 5px;
+    border-radius: 4px;
+    justify-content: center;
+    margin-top: 50px;
+    text-decoration: white;
+
+} */
+
+.font {
+    text-decoration: white;
+}
+
+.banner1 {
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    justify-content: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    /* background-image: rgba(0, 0, 0, 0.6)url('assets/pexels-pixabay-247823.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: darken
+    bac */
+    background-color: aliceblue;
+}
+
+/* Banner Baru */
+.banner {
+    position: relative;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fact {
+    margin: 10px;
+    text-align: center;
+}
+
+.fact i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.fact h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Card */
+.card-container {
+    width: 1250px;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5em;
+}
+
+.card {
+    display: grid;
+    position: relative;
+    grid-template-columns: auto 1fr;
+    box-shadow: 5px 5px 10px rgba(85, 85, 85, 0.2);
+    margin: 1em 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+    padding: 1em;
+    border-radius: 30px;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #0b0028;
+}
+
+.card-text {
+    color: #6f6f6f;
+    text-align: justify;
+    margin: 0.8em 0 1em 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-view {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    color: #EB890A;
+    width: 9em;
+    text-align: center;
+    padding: 0.3em 0.2em;
+    border-radius: 5px;
+}
+
+/* Bawah Baru */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.news-item {
+    margin-bottom: 20px;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 1100px) {
+    .card-container {
+        width: 75%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 3em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card-container {
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 1em;
+    }
+}

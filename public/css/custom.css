@@ -1,0 +1,60 @@
+
+.container-fluid{
+    width: 80vw;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.container-fluid .row{
+    margin: 10px;
+    padding: 15px;
+}
+
+.container-fluid .gallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+   
+}
+
+.container-fluid .kerjasama img{
+    width: 100px;
+    height: auto;
+    margin: 50px;
+}
+/* end dashboard-home*/
+
+/*dashboard-berita*/
+.judul{
+    max-width: 100vw;
+    height: 150px;
+    background: linear-gradient(to right, #000046, #1cb5e0);
+    color: whitesmoke;
+    align-items: center; 
+    display: flex;
+}
+.judul h1{
+    margin-left: 50px;
+}
+
+
+.wrapper{
+    margin: 30px;
+    padding: 20px;
+}
+
+.wrapper .row .col-4 .card{
+    margin: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .row .col-4 .card .card-body a{
+    float: right;
+    
+}
+
+/* end dashboard-berita */
+
+
