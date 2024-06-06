@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -13,7 +14,10 @@ class BeritaController extends Controller
         $data = Berita::latest()->take(3)->get();
         $main = Berita::latest()->first();
         $sec = Berita::latest()->take(4)->get();
-        return view('Content.home', compact('data', 'main', 'sec'));
+        $data2 = Pengumuman::latest()->take(3)->get();
+        $main2 = Pengumuman::latest()->first();
+        $sec2 = Pengumuman::latest()->take(4)->get();
+        return view('Content.home', compact('data', 'main', 'sec', 'data2', 'main2', 'sec2'));
     }
 
     public function indexBerita()
@@ -58,7 +62,7 @@ class BeritaController extends Controller
     {
         //
         $all = Berita::findOrFail($id);
-        return view('Content.KegiatanMahasiswa', compact('all'));
+        return view('Content.dashboard-berita', compact('all'));
     }
 
     public function updateBerita(Request $request, string $id)

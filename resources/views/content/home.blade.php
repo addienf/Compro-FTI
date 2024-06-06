@@ -38,33 +38,32 @@
     <!-- end carosel -->
 
     <!-- pengumuman -->
-    {{-- <div class="container-fluid" id="container-fluid">
+    <div class="container-fluid" id="container-fluid">
         <div class="options-container ">
-            <a class="option active-option" href="{{ url('PMM') }}">Pengumuman</a>
-            <a class="option active-option" href="{{ url('Magang') }}">Acara Selanjutnya</a>
+            <a class="option active-option" href="{{ url('Pengumuman') }}">Pengumuman</a>
         </div>
         <div data-aos="fade-up">
             <div class="card-container mt-3">
-                @foreach ($data as $berita)
+                @foreach ($data2 as $Pengumuman)
                     <div class="card" style="">
-                        <img src="{{ asset('img/' . $berita['ImgBerita']) }}" class="card-img-top" alt="...">
+                        <img src="{{ asset('img/' . $Pengumuman['ImgPengumuman']) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $berita['Judul'] }}</h5>
-                            <h5 class="card-title">{{ $berita['Tanggal'] }}</h5>
+                            <h5 class="card-title">{{ $Pengumuman['Judul'] }}</h5>
+                            <h5 class="card-title">{{ $Pengumuman['Tanggal'] }}</h5>
                             <p class="card-text">
-                                {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
+                                {{ substr($Pengumuman['IsiPengumuman'], 0, 50) }}{{ strlen($Pengumuman['IsiPengumuman']) > 50 ? '...' : '' }}
                             </p>
                             <div class="d-flex justify-content-between">
                                 <button type="submit" class="btn-view" data-bs-toggle="modal" data-bs-target=""
-                                    id="beritaButton"
-                                    data-url="{{ url('Berita-d/' . $berita->IdBerita) }}">Selengkapnya</button>
+                                    id="PengumumanButton"
+                                    data-url="{{ url('Pengumuman-d/' . $Pengumuman->IdPengumuman) }}">Selengkapnya</button>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- end pengumuman -->
 
     <!-- tentang fti -->
@@ -119,7 +118,7 @@
     </div>
     <!-- end banner -->
 
-    <!--berita-->
+    <!--Pengumuman-->
     <div class="">
         <div class="main-news mt-5 w-100" data-aos="fade-up">
             <div class="containercard">Berita Terkini</div>
