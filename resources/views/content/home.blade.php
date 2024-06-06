@@ -53,11 +53,10 @@
                             <p class="card-text">
                                 {{ substr($Pengumuman['IsiPengumuman'], 0, 50) }}{{ strlen($Pengumuman['IsiPengumuman']) > 50 ? '...' : '' }}
                             </p>
-                            <div class="d-flex justify-content-between">
-                                <button type="submit" class="btn-view" data-bs-toggle="modal" data-bs-target=""
-                                    id="PengumumanButton"
-                                    data-url="{{ url('Pengumuman-d/' . $Pengumuman->IdPengumuman) }}">Selengkapnya</button>
-                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between pb-2 ms-3">
+                            <a href="{{ url('Pengumuman-d/' . $Pengumuman->IdPengumuman) }}" class="btn-view"
+                                style="border: 2px solid #252525;">Selengkapnya</a>
                         </div>
                     </div>
                 @endforeach
