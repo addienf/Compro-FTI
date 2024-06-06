@@ -74,7 +74,7 @@ class PenelitianController extends Controller
                 return redirect()->back()->with('error', 'Gagal menghapus file lama.');
             }
         } else {
-            return redirect('Penelitian')->back()->with('error', 'Tidak ada file yang diunggah atau tidak ada file lama yang ditemukan.');
+            return redirect('Penelitian')->with('error', 'Tidak ada file yang diunggah atau tidak ada file lama yang ditemukan.');
         }
     }
 
@@ -86,6 +86,6 @@ class PenelitianController extends Controller
             unlink(public_path('img') . '/' . $penelitian->ImgPenelitian);
         }
         $penelitian->delete();
-        return redirect('Penelitian')->back()->with('error', 'Kegiatan berhasil dihapus.');
+        return redirect('Penelitian')->with('error', 'Kegiatan berhasil dihapus.');
     }
 }
