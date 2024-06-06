@@ -19,7 +19,7 @@
                 @if ($main)
                     <img class="thumb mb-3" src="{{ asset('img/' . $main['ImgBerita']) }}" alt="">
                     <h3>
-                        <a class="font-medium" href="">
+                        <a class="font-medium" href="{{ url('Berita-d/' . $main->IdBerita) }}">
                             {{ $main['Judul'] }}
                         </a>
                     </h3>
@@ -36,7 +36,7 @@
                                         <img src="{{ asset('img/' . $brt->ImgBerita) }}" alt="">
                                     </div>
                                     <h3 class="mb-4">
-                                        <a class="font-medium" href="">
+                                        <a class="font-medium" href="{{ url('Berita-d/' . $brt->IdBerita) }}">
                                             {{ $brt->Judul }}
                                         </a>
                                     </h3>
@@ -65,9 +65,7 @@
                                 {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
                             </p>
                             <div class="d-flex justify-content-between">
-                                <button type="submit" class="btn-view" data-bs-toggle="modal" data-bs-target=""
-                                    id="beritaButton"
-                                    data-url="{{ url('Berita-d/' . $berita->IdBerita) }}">Selengkapnya</button>
+                                <a href="{{ url('Berita-d/' . $berita->IdBerita) }}" class="btn-view">Selengkapnya</a>
                                 @auth
                                     <div class="d-flex justify-content-center align-items-center">
                                         <button type="button" class="btn btn-primary mx-2" data-toggle="modal"
