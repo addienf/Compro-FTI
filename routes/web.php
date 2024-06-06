@@ -8,6 +8,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KerjasamaController;
 use App\Http\Controllers\MBKMController;
 use App\Http\Controllers\PenelitianController;
+use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PKMController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,11 +23,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Landing & Berita
+// Landing, Berita, & Pengumuman
 Route::get('/', [BeritaController::class, 'index']);
-// Route::get('/Home', function () {
-//     return view('Content.home');
-// });
 
 Route::get('/Berita', [BeritaController::class, 'indexBerita']);
 Route::get('/addBerita', [BeritaController::class, 'createBerita']);
@@ -34,8 +32,15 @@ Route::post('/addBerita', [BeritaController::class, 'storeBerita']);
 Route::get('/Berita/{id}/edit', [BeritaController::class, 'editBerita'])->name('Berita.Edit');
 Route::put('/Berita/{id}', [BeritaController::class, 'updateBerita'])->name('Berita.Update');
 Route::delete('Berita/{id}', [BeritaController::class, 'destroyBerita'])->name('Berita.Destroy');
-
 Route::get('/Berita-d/{id}', [BeritaController::class, 'detailBerita']);
+
+Route::get('/Pengumuman', [PengumumanController::class, 'indexPengumuman']);
+Route::get('/addPengumuman', [PengumumanController::class, 'createPengumuman']);
+Route::post('/addPengumuman', [PengumumanController::class, 'storePengumuman']);
+Route::get('/Pengumuman/{id}/edit', [PengumumanController::class, 'editPengumuman'])->name('Pengumuman.Edit');
+Route::put('/Pengumuman/{id}', [PengumumanController::class, 'updatePengumuman'])->name('Pengumuman.Update');
+Route::delete('Pengumuman/{id}', [PengumumanController::class, 'destroyPengumuman'])->name('Pengumuman.Destroy');
+Route::get('/Pengumuman-d/{id}', [PengumumanController::class, 'detailPengumuman']);
 
 Route::get('/Fakultas', function () {
     return view('Content.dashboard-vismis');

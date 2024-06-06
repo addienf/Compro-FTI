@@ -3,13 +3,13 @@
 @section('content')
     @include('Component.Navbar')
     <div class="jud">
-        <h1>Artikel Berita FTI</h1>
+        <h1>Artikel Pengumuman FTI</h1>
     </div>
 
     <div class="options-container">
         @auth
-            <a type="button" class="option active-option mt-5" data-bs-toggle="modal" data-bs-target="#addBerita">Tambah
-                Berita</a>
+            <a type="button" class="option active-option mt-5" data-bs-toggle="modal" data-bs-target="#addPengumuman">Tambah
+                Pengumuman</a>
         @endauth
     </div>
 
@@ -17,9 +17,9 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 col-xs-12 col-lg-6">
                 @if ($main)
-                    <img class="thumb mb-3" src="{{ asset('img/' . $main['ImgBerita']) }}" alt="">
+                    <img class="thumb mb-3" src="{{ asset('img/' . $main['ImgPengumuman']) }}" alt="">
                     <h3>
-                        <a class="font-medium" href="{{ url('Berita-d/' . $main->IdBerita) }}">
+                        <a class="font-medium" href="{{ url('Pengumuman-d/' . $main->IdPengumuman) }}">
                             {{ $main['Judul'] }}
                         </a>
                     </h3>
@@ -33,10 +33,10 @@
                             @foreach ($chunk as $brt)
                                 <div class="news-item">
                                     <div class="image image-sm mb-1 mx-2">
-                                        <img src="{{ asset('img/' . $brt->ImgBerita) }}" alt="">
+                                        <img src="{{ asset('img/' . $brt->ImgPengumuman) }}" alt="">
                                     </div>
                                     <h3 class="mb-4">
-                                        <a class="font-medium" href="{{ url('Berita-d/' . $brt->IdBerita) }}">
+                                        <a class="font-medium" href="{{ url('Pengumuman-d/' . $brt->IdPengumuman) }}">
                                             {{ $brt->Judul }}
                                         </a>
                                     </h3>
@@ -50,30 +50,31 @@
     </div>
 
 
-    <!-- section berita -->
+    <!-- section Pengumuman -->
     <div class="wrapper">
         <div class="row mt-3">
             <div class="card-container mt-3">
-                @foreach ($all as $berita)
+                @foreach ($all as $Pengumuman)
                     <div class="card" style="">
-                        <h5 class="card-title d-none">{{ $berita['IdBerita'] }}</h5>
-                        <img src="{{ asset('img/' . $berita['ImgBerita']) }}" class="card-img-top" alt="...">
+                        <h5 class="card-title d-none">{{ $Pengumuman['IdPengumuman'] }}</h5>
+                        <img src="{{ asset('img/' . $Pengumuman['ImgPengumuman']) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $berita['Judul'] }}</h5>
-                            <h5 class="card-title">{{ $berita['Tanggal'] }}</h5>
+                            <h5 class="card-title">{{ $Pengumuman['Judul'] }}</h5>
+                            <h5 class="card-title">{{ $Pengumuman['Tanggal'] }}</h5>
                             <p class="card-text">
-                                {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
+                                {{ substr($Pengumuman['IsiPengumuman'], 0, 50) }}{{ strlen($Pengumuman['IsiPengumuman']) > 50 ? '...' : '' }}
                             </p>
                             <div class="d-flex justify-content-between">
-                                <a href="{{ url('Berita-d/' . $berita->IdBerita) }}" class="btn-view">Selengkapnya</a>
+                                <a href="{{ url('Pengumuman-d/' . $Pengumuman->IdPengumuman) }}"
+                                    class="btn-view">Selengkapnya</a>
                                 @auth
                                     <div class="d-flex justify-content-center align-items-center">
                                         <button type="button" class="btn btn-primary mx-2" data-toggle="modal"
-                                            data-target="#editModal{{ $berita->IdBerita }}">
+                                            data-target="#editModal{{ $Pengumuman->IdPengumuman }}">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </button>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#deleteModal{{ $berita->IdBerita }}">
+                                            data-target="#deleteModal{{ $Pengumuman->IdPengumuman }}">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </div>
@@ -84,12 +85,12 @@
 
                     {{-- Modals --}}
                     {{-- Delete Data --}}
-                    <div class="modal fade" id="deleteModal{{ $berita->IdBerita }}" tabindex="-1" role="dialog"
-                        aria-labelledby="deleteModalLabel{{ $berita->IdBerita }}" aria-hidden="true">
+                    <div class="modal fade" id="deleteModal{{ $Pengumuman->IdPengumuman }}" tabindex="-1" role="dialog"
+                        aria-labelledby="deleteModalLabel{{ $Pengumuman->IdPengumuman }}" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteModalLabel{{ $berita->IdBerita }}">Konfirmasi
+                                    <h5 class="modal-title" id="deleteModalLabel{{ $Pengumuman->IdPengumuman }}">Konfirmasi
                                         Hapus
                                     </h5>
                                 </div>
@@ -98,7 +99,8 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                    <form action="{{ route('Berita.Destroy', $berita->IdBerita) }}" method="POST">
+                                    <form action="{{ route('Pengumuman.Destroy', $Pengumuman->IdPengumuman) }}"
+                                        method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Hapus</button>
@@ -109,50 +111,53 @@
                     </div>
 
                     {{-- Edit Data --}}
-                    <div class="modal fade" id="editModal{{ $berita->IdBerita }}" tabindex="-1" role="dialog"
-                        aria-labelledby="editModalLabel{{ $berita->IdBerita }}" aria-hidden="true">
+                    <div class="modal fade" id="editModal{{ $Pengumuman->IdPengumuman }}" tabindex="-1" role="dialog"
+                        aria-labelledby="editModalLabel{{ $Pengumuman->IdPengumuman }}" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header mt-5">
-                                    <h5 class="modal-title" id="editModalLabel{{ $berita->IdBerita }}">Edit Berita</h5>
+                                    <h5 class="modal-title" id="editModalLabel{{ $Pengumuman->IdPengumuman }}">Edit
+                                        Pengumuman</h5>
                                 </div>
-                                <form action="{{ route('Berita.Update', $berita->IdBerita) }}" method="POST"
+                                <form action="{{ route('Pengumuman.Update', $Pengumuman->IdPengumuman) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="modal-body">
                                         <div class="mb-3">
-                                            <label for="judul-Berita" class="col-form-label d-flex flex-start">Judul
-                                                Berita</label>
-                                            <input type="text" class="form-control" id="judul-Berita" name="Judul"
-                                                value="{{ $berita->Judul }}" required>
+                                            <label for="judul-Pengumuman" class="col-form-label d-flex flex-start">Judul
+                                                Pengumuman</label>
+                                            <input type="text" class="form-control" id="judul-Pengumuman" name="Judul"
+                                                value="{{ $Pengumuman->Judul }}" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="Penulis-Berita" class="col-form-label d-flex flex-start">Penulis
-                                                Berita</label>
-                                            <input type="text" class="form-control" id="Penulis-Berita"
-                                                name="Penulis" value="{{ $berita->Penulis }}" required>
+                                            <label for="Penulis-Pengumuman" class="col-form-label d-flex flex-start">Penulis
+                                                Pengumuman</label>
+                                            <input type="text" class="form-control" id="Penulis-Pengumuman"
+                                                name="Penulis" value="{{ $Pengumuman->Penulis }}" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="Tanggal-Berita" class="col-form-label d-flex flex-start">Tanggal
-                                                Berita</label>
-                                            <input type="date" class="form-control" id="Tanggal-Berita"
-                                                name="Tanggal" value="{{ $berita->Tanggal }}">
+                                            <label for="Tanggal-Pengumuman"
+                                                class="col-form-label d-flex flex-start">Tanggal
+                                                Pengumuman</label>
+                                            <input type="date" class="form-control" id="Tanggal-Pengumuman"
+                                                name="Tanggal" value="{{ $Pengumuman->Tanggal }}">
                                         </div>
                                         <div class="mb-3">
                                             <label for="deskripsi-kegiatan"
                                                 class="col-form-label d-flex flex-start">isi</label>
-                                            <textarea class="form-control" id="isi-kegiatan" name="IsiBerita" required>{{ $berita->IsiBerita }}</textarea>
+                                            <textarea class="form-control" id="isi-kegiatan" name="IsiPengumuman" required>{{ $Pengumuman->IsiPengumuman }}</textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="img-Berita" class="col-form-label d-flex flex-start">Dokumentasi
-                                                Berita</label>
-                                            <input class="form-control" type="file" id="img-Berita" name="ImgBerita"
-                                                accept="image/*">
-                                            @if ($berita->ImgBerita)
+                                            <label for="img-Pengumuman"
+                                                class="col-form-label d-flex flex-start">Dokumentasi
+                                                Pengumuman</label>
+                                            <input class="form-control" type="file" id="img-Pengumuman"
+                                                name="ImgPengumuman" accept="image/*">
+                                            @if ($Pengumuman->ImgPengumuman)
                                                 <div class="mt-2">
-                                                    <img src="{{ asset('img/' . $berita->ImgBerita) }}"
-                                                        alt="Dokumentasi Berita" style="max-width: 200px;" required>
+                                                    <img src="{{ asset('img/' . $Pengumuman->ImgPengumuman) }}"
+                                                        alt="Dokumentasi Pengumuman" style="max-width: 200px;">
                                                 </div>
                                             @endif
                                         </div>
@@ -172,40 +177,45 @@
 
         {{-- Modals --}}
         {{-- Tambah Data --}}
-        <div class="modal fade" id="addBerita" tabindex="-1" aria-labelledby="addBeritaLabel" aria-hidden="true">
+        <div class="modal fade" id="addPengumuman" tabindex="-1" aria-labelledby="addPengumumanLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addBeritaLabel">Tambah Berita</h5>
+                        <h5 class="modal-title" id="addPengumumanLabel">Tambah Pengumuman</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="addBerita" method="POST" enctype="multipart/form-data">
+                    <form action="addPengumuman" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             @csrf
                             <div class="mb-3">
-                                <label for="judul-Berita" class="col-form-label d-flex flex-start">Judul
-                                    Berita</label>
-                                <input type="text" class="form-control" id="judul-Berita" name="Judul" required>
+                                <label for="judul-Pengumuman" class="col-form-label d-flex flex-start">Judul
+                                    Pengumuman</label>
+                                <input type="text" class="form-control" id="judul-Pengumuman" name="Judul"
+                                    required>
                             </div>
                             <div class="mb-3">
-                                <label for="Penulis-Berita" class="col-form-label d-flex flex-start">Penulis
-                                    Berita</label>
-                                <input type="text" class="form-control" id="Penulis-Berita" name="Penulis" required>
+                                <label for="Penulis-Pengumuman" class="col-form-label d-flex flex-start">Penulis
+                                    Pengumuman</label>
+                                <input type="text" class="form-control" id="Penulis-Pengumuman" name="Penulis"
+                                    required>
                             </div>
                             <div class="mb-3">
-                                <label for="Tanggal-Berita" class="col-form-label d-flex flex-start">Tanggal
-                                    Berita</label>
-                                <input type="date" class="form-control" id="Tanggal-Berita" name="Tanggal" required>
+                                <label for="Tanggal-Pengumuman" class="col-form-label d-flex flex-start">Tanggal
+                                    Pengumuman</label>
+                                <input type="date" class="form-control" id="Tanggal-Pengumuman" name="Tanggal"
+                                    required>
                             </div>
                             <div class="mb-3">
-                                <label for="isi-Berita" class="col-form-label d-flex flex-start">Isi Berita</label>
-                                <textarea class="form-control" id="isi-Berita" name="IsiBerita" required></textarea>
+                                <label for="isi-Pengumuman" class="col-form-label d-flex flex-start">Isi
+                                    Pengumuman</label>
+                                <textarea class="form-control" id="isi-Pengumuman" name="IsiPengumuman" required></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="img-Berita" class="col-form-label d-flex flex-start">Dokumentasi
-                                    Berita</label>
-                                <input class="form-control" type="file" id="img-Berita" name="ImgBerita" required
-                                    accept="image/*">
+                                <label for="img-Pengumuman" class="col-form-label d-flex flex-start">Dokumentasi
+                                    Pengumuman</label>
+                                <input class="form-control" type="file" id="img-Pengumuman" name="ImgPengumuman"
+                                    required accept="image/*">
                             </div>
                         </div>
                         <div class="modal-footer mt-2">
@@ -217,7 +227,7 @@
             </div>
         </div>
     </div>
-    <!-- end section berita -->
+    <!-- end section Pengumuman -->
 
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
