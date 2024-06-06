@@ -62,11 +62,3 @@ document.getElementById('hamburger').addEventListener('click', function() {
     var navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
 });
-
-// href Button
-document.addEventListener('DOMContentLoaded', (event) => {
-    var button = document.getElementById('beritaButton');
-    button.addEventListener('click', function() {
-        window.location.href = button.getAttribute('data-url');
-    });
-});

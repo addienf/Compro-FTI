@@ -38,7 +38,7 @@
     <!-- end carosel -->
 
     <!-- pengumuman -->
-    <div class="container-fluid" id="container-fluid">
+    {{-- <div class="container-fluid" id="container-fluid">
         <div class="options-container ">
             <a class="option active-option" href="{{ url('PMM') }}">Pengumuman</a>
             <a class="option active-option" href="{{ url('Magang') }}">Acara Selanjutnya</a>
@@ -64,7 +64,7 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- end pengumuman -->
 
     <!-- tentang fti -->
@@ -128,7 +128,7 @@
                     @if ($main)
                         <img class="thumb mb-3" src="{{ asset('img/' . $main['ImgBerita']) }}" alt="">
                         <h3>
-                            <a class="font-medium" href="">
+                            <a class="font-medium" href="{{ url('Berita-d/' . $main->IdBerita) }}">
                                 {{ $main['Judul'] }}
                             </a>
                         </h3>
@@ -144,7 +144,7 @@
                                             <img src="{{ asset('img/' . $brt->ImgBerita) }}" alt="">
                                         </div>
                                         <h3 class="mb-4">
-                                            <a class="font-medium" href="">
+                                            <a class="font-medium" href="{{ url('Berita-d/' . $brt->IdBerita) }}">
                                                 {{ $brt->Judul }}
                                             </a>
                                         </h3>
