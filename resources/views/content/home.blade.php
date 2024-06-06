@@ -96,9 +96,9 @@
     <!-- end tentang fti -->
 
     <!-- banner -->
-    <div class="banner" style="background-image: url('assets/fakta.png');" data-aos="fade-up">
+    <div class="banner" style="background-image: url('assets/fakta.png');">
         <div class="overlay"></div>
-        <div class="content">
+        <div class="content" data-aos="fade-up">
             <div class="fact">
                 <i class="fa-solid fa-building-columns"></i>
                 <h2>Berdiri Tahun 1933</h2>
