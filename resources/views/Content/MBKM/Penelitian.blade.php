@@ -75,7 +75,7 @@
                         {{-- Delete Data --}}
                         <div class="modal fade" id="deleteModal{{ $peneliti->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="deleteModalLabel{{ $peneliti->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="deleteModalLabel{{ $peneliti->IdMBKM }}">Konfirmasi
@@ -88,7 +88,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <form action="{{ route('Penelitian.Destroy', $peneliti->IdMBKM) }}" method="POST">
+                                        <form action="{{ route('PenelitianMBKM.Destroy', $peneliti->IdMBKM) }}"
+                                            method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Hapus</button>
@@ -100,13 +101,14 @@
 
                         <div class="modal fade" id="editModal{{ $peneliti->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="editModalLabel{{ $peneliti->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel{{ $peneliti->IdMBKM }}">Edit Kegiatan
+                                        <h5 class="modal-title" id="editModalLabel{{ $peneliti->IdMBKM }}">Edit
+                                            Kegiatan
                                         </h5>
                                     </div>
-                                    <form action="{{ route('Penelitian.Update', $peneliti->IdMBKM) }}" method="POST"
+                                    <form action="{{ route('PenelitianMBKM.Update', $peneliti->IdMBKM) }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
@@ -160,13 +162,13 @@
     {{-- Modals --}}
     {{-- Tambah Data --}}
     <div class="modal fade" id="addPenelitian" tabindex="-1" aria-labelledby="addPenelitianLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addPenelitianLabel">Tambah Kegiatan</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="addPenelitian" method="POST" enctype="multipart/form-data">
+                <form action="addPenelitianMBKM" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         @csrf
                         <div class="mb-3">
@@ -204,4 +206,5 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

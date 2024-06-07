@@ -39,6 +39,7 @@
                 {{ session('error') }}
             </div>
         @endif
+
         <div class="card-container">
             @foreach ($data as $pres)
                 <div class="card" style="background-image: url('{{ asset('img/' . $pres['ImgPrestasi']) }}');"
@@ -65,7 +66,7 @@
                 {{-- Delete Data --}}
                 <div class="modal fade" id="deleteModal{{ $pres->IdPrestasi }}" tabindex="-1" role="dialog"
                     aria-labelledby="deleteModalLabel{{ $pres->IdPrestasi }}" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="deleteModalLabel{{ $pres->IdPrestasi }}">Konfirmasi Hapus
@@ -89,7 +90,7 @@
                 {{-- Edit Data --}}
                 <div class="modal fade" id="editModal{{ $pres->IdPrestasi }}" tabindex="-1" role="dialog"
                     aria-labelledby="editModalLabel{{ $pres->IdPrestasi }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="editModalLabel{{ $pres->IdPrestasi }}">Edit Kegiatan</h5>
@@ -124,7 +125,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                                 </div>
                             </form>
@@ -137,7 +139,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addKegiatan" tabindex="-1" aria-labelledby="addKegiatanLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addKegiatanLabel">Tambah Prestasi</h5>
@@ -171,15 +173,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- Alert --}}
-        <div class="popup" id="popup">
-            <img src="{{ asset('img\404-tick.png') }}" alt="">
-            <h2>Sorry!</h2>
-            <p>Fitur yang anda pilih belum tersedia :(</p>
-            <button type="button" onclick="closePopup()">OK</button>
-        </div>
     </div>
     <script src="js/dropdown.js"></script>
-    {{-- @include('Component.Footer') --}}
+    @include('Component.Footer')
 @endsection

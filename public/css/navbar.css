@@ -4,19 +4,24 @@ body
 	font-family:'Roboto', sans-serif;
 	text-align:center;
 	font-weight:bold;
- 
 }
 
 .navbar {
   background: linear-gradient(to right, #2262B3, #261446);
   padding: 5px;
   text-align: center;
+  position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 
 #mainNav {
   font-size: 5px;
   display: flex;
   justify-content: center;
+  position: sticky;
+    top: 0;
+  
 }
 
 /*CSS3 STROKE EFFECT*/
@@ -25,11 +30,17 @@ body
   margin:0;
   font-size: 18px;
   padding: 30px 16px;
+  position: sticky;
+    top: 0;
+    z-index: 0999;
 }
 #mainNav ul li {
   display: inline-block;
 	display:inline;
 	margin: 10px;
+  position: sticky;
+    top: 0;
+    z-index: 1;
 }
 #mainNav ul li a {
   padding-bottom: 5px;
@@ -114,6 +125,9 @@ body
   text-align: center;
   padding: 0px;
   font-size: 18px;
+  position: sticky;
+    top: 0;
+    z-index: 999;
   
 }
 
@@ -121,11 +135,17 @@ body
   list-style: none;
   padding: 0;
   margin: 0;
+  position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .navbottom ul li {
   display: inline-block;
   margin: 5px;
+  position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .navbottom ul li a {

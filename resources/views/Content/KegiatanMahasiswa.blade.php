@@ -39,6 +39,7 @@
                 {{ session('error') }}
             </div>
         @endif
+
         <div class="card-container">
             @foreach ($data as $kgt)
                 <div class="card" style="">
@@ -92,7 +93,7 @@
                 {{-- Delete Data --}}
                 <div class="modal fade" id="deleteModal{{ $kgt->IdKegiatan }}" tabindex="-1" role="dialog"
                     aria-labelledby="deleteModalLabel{{ $kgt->IdKegiatan }}" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="deleteModalLabel{{ $kgt->IdKegiatan }}">Konfirmasi Hapus
@@ -116,7 +117,7 @@
                 {{-- Edit Data --}}
                 <div class="modal fade" id="editModal{{ $kgt->IdKegiatan }}" tabindex="-1" role="dialog"
                     aria-labelledby="editModalLabel{{ $kgt->IdKegiatan }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="editModalLabel{{ $kgt->IdKegiatan }}">Edit Kegiatan</h5>
@@ -164,7 +165,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addKegiatan" tabindex="-1" aria-labelledby="addKegiatanLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addKegiatanLabel">Tambah Kegiatan</h5>
@@ -188,6 +189,8 @@
                                     Kegiatan</label>
                                 <input class="form-control" type="file" id="img-kegiatan" name="ImgKegiatan" required
                                     accept="image/*">
+                                <label for="img-kegiatan" class="col-form-label d-flex flex-start">Tipe file yang
+                                    diterima: jpg, png, jpeg</label>
                             </div>
                         </div>
                         <div class="modal-footer mt-2">
@@ -198,33 +201,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- Alert --}}
-        <div class="popup" id="popup">
-            <img src="{{ asset('img\404-tick.png') }}" alt="">
-            <h2>Maaf!</h2>
-            <p>Fitur yang anda pilih belum tersedia :(</p>
-            <button type="button" onclick="closePopup()">OK</button>
-        </div>
-
-        <div class="modal fade" id="unfinishedFeatureModal" tabindex="-1" aria-labelledby="unfinishedFeatureModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="unfinishedFeatureModalLabel">Fitur Belum Rampung</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Maaf, fitur yang Anda pilih belum selesai.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <script src="js/dropdown.js"></script>
-    {{-- @include('Component.Footer') --}}
+    @include('Component.Footer')
 @endsection

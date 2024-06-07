@@ -8,7 +8,18 @@
     </div>
     <div class="body">
         <div class="options-container">
-            <a class="option active-option" href="{{ url('PMM') }}">Pertukaran Mahasiswa</a>
+            <a class="option dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Pertukaran Mahasiswa
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="option dropdown-item active-option" href="{{ url('PMM-In') }}">Pertukaran Mahasiswa
+                        Inbound</a>
+                </li>
+                <li><a class="option dropdown-item active-option" href="{{ url('PMM-Out') }}">Pertukaran Mahasiswa
+                        Outbound</a>
+                </li>
+            </ul>
             <a class="option active-option" href="{{ url('Magang') }}">Magang</a>
             <a class="option active-option" href="{{ url('KKNTematik') }}">KKN Tematik</a>
             <a class="option active-option" href="{{ url('Penelitian-MBKM') }}">Penelitian</a>
@@ -29,12 +40,14 @@
         @endif
 
         @auth
-            <div class="btn-tambah">
+            <div class="btn-tambah mb-4">
                 <a type="button" class="option active-option w-100" data-bs-toggle="modal" data-bs-target="#addPMM">Tambah
                     Data</a>
             </div>
         @endauth
-
+        <div class="btn-tambah">
+            <h3 class="w-100">Pertukaran Mahasiswa ITENAS</h3>
+        </div>
         <div class="container-table">
             <table id="test" class="table table-striped " style="width:100%">
                 <thead>
@@ -61,9 +74,9 @@
                                 <td>
                                     <div class="d-flex justify-content-center mt-1">
                                         <a class="btn-primary mx-2 fa-solid fa-pen-to-square p-1" data-bs-toggle="modal"
-                                            data-bs-target="#editModal{{ $pmm->IdMBKM }}"></a>
+                                            data-bs-target="#editModal{{ $pmm->IdMBKM }}" style="cursor: pointer;"></a>
                                         <a class="btn-danger mx-2 fas fa-trash p-1" data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal{{ $pmm->IdMBKM }}"></a>
+                                            data-bs-target="#deleteModal{{ $pmm->IdMBKM }}" style="cursor: pointer;"></a>
                                     </div>
                                 </td>
                             @endauth
@@ -73,7 +86,7 @@
                         {{-- Delete Data --}}
                         <div class="modal fade" id="deleteModal{{ $pmm->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="deleteModalLabel{{ $pmm->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="deleteModalLabel{{ $pmm->IdMBKM }}">Konfirmasi
@@ -98,7 +111,7 @@
 
                         <div class="modal fade" id="editModal{{ $pmm->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="editModalLabel{{ $pmm->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="editModalLabel{{ $pmm->IdMBKM }}">Edit Kegiatan
@@ -117,12 +130,25 @@
                                             <div class="mb-3">
                                                 <label for="nama-magang" class="col-form-label d-flex flex-start">Nama
                                                     Mahasiswa</label>
-                                                <input type="text" class="form-control" id="nama-magang" name="Nama"
-                                                    value="{{ $pmm->Nama }}" required></input>
+                                                <input type="text" class="form-control" id="nama-magang"
+                                                    name="Nama" value="{{ $pmm->Nama }}" required></input>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="asal-prodi-pmm" class="col-form-label d-flex flex-start">Nama
-                                                    Perusahaan</label>
+                                                <label for="IdJenisPertukaran"
+                                                    class="col-form-label d-flex flex-start">Jenis Pertukaran</label>
+                                                <select name="IdJenisPertukaran" id="IdJenisPertukaran"
+                                                    class="form-select">
+                                                    @foreach ($data2 as $jenis)
+                                                        <option value="{{ $jenis->IdJenisPertukaran }}"
+                                                            @if (old('IdJenisPertukaran', $pmm->IdJenisPertukaran) == $jenis->IdJenisPertukaran) selected @endif>
+                                                            {{ $jenis->NamaJenisPertukaran }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="asal-prodi-pmm" class="col-form-label d-flex flex-start">Asal
+                                                    Prodi</label>
                                                 <input type="text" class="form-control" id="asal-prodi-pmm"
                                                     value="{{ $pmm->AsalProdi }}" name="AsalProdi" required></input>
                                             </div>
@@ -150,7 +176,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addPMM" tabindex="-1" aria-labelledby="addPMMLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addPMMLabel">Tambah Kegiatan</h5>
@@ -167,6 +193,16 @@
                                 <label for="nama-pmm1" class="col-form-label d-flex flex-start">Nama Mahasiswa</label>
                                 <input type="text" class="form-control" id="nama-pmm1" name="Nama"
                                     required></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="IdJenisPertukaran" class="col-form-label d-flex flex-start">Jenis
+                                    Pertukaran</label>
+                                <select name="IdJenisPertukaran" id="IdJenisPertukaran" class="form-select" required>
+                                    @foreach ($data2 as $jenis)
+                                        <option value="{{ $jenis->IdJenisPertukaran }}">{{ $jenis->NamaJenisPertukaran }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="asalprodi-pmm1" class="col-form-label d-flex flex-start">Asal Prodi</label>
@@ -188,5 +224,5 @@
             </div>
         </div>
     </div>
-    <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

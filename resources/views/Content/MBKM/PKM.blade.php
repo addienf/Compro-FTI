@@ -74,7 +74,7 @@
                         {{-- Delete Data --}}
                         <div class="modal fade" id="deleteModal{{ $pkm->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="deleteModalLabel{{ $pkm->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="deleteModalLabel{{ $pkm->IdMBKM }}">Konfirmasi
@@ -99,7 +99,7 @@
 
                         <div class="modal fade" id="editModal{{ $pkm->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="editModalLabel{{ $pkm->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="editModalLabel{{ $pkm->IdMBKM }}">Edit Kegiatan
@@ -158,8 +158,8 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addPKM" tabindex="-1" aria-labelledby="addPKMLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addPKMLabel">Tambah Kegiatan</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -203,6 +203,6 @@
             </div>
         </div>
     </div>
-
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

@@ -39,6 +39,7 @@
                 {{ session('error') }}
             </div>
         @endif
+
         <div class="card-container">
             @foreach ($data as $lg)
                 <div class="card" style="">
@@ -47,7 +48,6 @@
                         <h5 class="card-title">{{ $lg['JudulLomba'] }}</h5>
                         <p class="card-text">{{ $lg['DescLomba'] }}</p>
                         <div class="d-flex justify-content-between">
-                            {{-- <button type="submit" class="btn-view" onclick="openPopup()">Selengkapnya</button> --}}
                             <button type="submit" class="btn-view" data-bs-toggle="modal"
                                 data-bs-target="#unfinishedFeatureModal">Selengkapnya</button>
                             @auth
@@ -56,7 +56,6 @@
                                         data-target="#editModal{{ $lg->IdLomba }}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </button>
-                                    {{-- <a href="" class="btn btn-primary mx-2"><i class="fa-solid fa-pen-to-square"></i></a> --}}
                                     <button type="button" class="btn btn-danger" data-toggle="modal"
                                         data-target="#deleteModal{{ $lg->IdLomba }}">
                                         <i class="fas fa-trash"></i>
@@ -71,7 +70,7 @@
                 {{-- Delete Data --}}
                 <div class="modal fade" id="deleteModal{{ $lg->IdLomba }}" tabindex="-1" role="dialog"
                     aria-labelledby="deleteModalLabel{{ $lg->IdLomba }}" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="deleteModalLabel{{ $lg->IdLomba }}">Konfirmasi Hapus
@@ -95,7 +94,7 @@
                 {{-- Edit Data --}}
                 <div class="modal fade" id="editModal{{ $lg->IdLomba }}" tabindex="-1" role="dialog"
                     aria-labelledby="editModalLabel{{ $lg->IdLomba }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="editModalLabel{{ $lg->IdLomba }}">Edit Lomba</h5>
@@ -143,7 +142,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addLomba" tabindex="-1" aria-labelledby="addLombaLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addLombaLabel">Tambah Lomba</h5>
@@ -175,15 +174,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- Alert --}}
-        <div class="popup" id="popup">
-            <img src="{{ asset('img\404-tick.png') }}" alt="">
-            <h2>Sorry!</h2>
-            <p>Fitur yang anda pilih belum tersedia :(</p>
-            <button type="button" onclick="closePopup()">OK</button>
-        </div>
     </div>
     <script src="js/dropdown.js"></script>
-    {{-- @include('Component.Footer') --}}
+    @include('Component.Footer')
 @endsection

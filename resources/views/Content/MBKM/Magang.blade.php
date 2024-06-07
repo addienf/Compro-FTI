@@ -34,7 +34,6 @@
                     Data</a>
             </div>
         @endauth
-
         <div class="container-table">
             <table id="test" class="table table-striped " style="width:100%">
                 <thead>
@@ -77,7 +76,7 @@
                         {{-- Delete Data --}}
                         <div class="modal fade" id="deleteModal{{ $mg->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="deleteModalLabel{{ $mg->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="deleteModalLabel{{ $mg->IdMBKM }}">Konfirmasi
@@ -102,7 +101,7 @@
 
                         <div class="modal fade" id="editModal{{ $mg->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="editModalLabel{{ $mg->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="editModalLabel{{ $mg->IdMBKM }}">Edit Kegiatan
@@ -170,7 +169,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addMagang" tabindex="-1" aria-labelledby="addMagangLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addMagangLabel">Tambah Data Magang</h5>
@@ -222,4 +221,5 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

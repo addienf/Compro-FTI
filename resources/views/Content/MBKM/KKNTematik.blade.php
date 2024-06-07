@@ -34,7 +34,6 @@
                     Data</a>
             </div>
         @endauth
-
         <div class="container-table">
             <table id="test" class="table table-striped " style="width:100%">
                 <thead>
@@ -75,7 +74,7 @@
                         {{-- Delete Data --}}
                         <div class="modal fade" id="deleteModal{{ $kkn->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="deleteModalLabel{{ $kkn->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="deleteModalLabel{{ $kkn->IdMBKM }}">Konfirmasi
@@ -100,7 +99,7 @@
 
                         <div class="modal fade" id="editModal{{ $kkn->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="editModalLabel{{ $kkn->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="editModalLabel{{ $kkn->IdMBKM }}">Edit Kegiatan
@@ -160,7 +159,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addKKN" tabindex="-1" aria-labelledby="addKKNLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addKKNLabel">Tambah Data KKN Tematik</h5>
@@ -205,4 +204,5 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

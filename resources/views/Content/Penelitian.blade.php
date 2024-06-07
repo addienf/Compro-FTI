@@ -21,13 +21,14 @@
             </div>
         </div>
         <div class="options-container">
-            <a class="option active-option" href="{{ url('KegiatanMahasiswa') }}">Kegiatan Mahasiswa</a>
-            <a class="option active-option" href="{{ url('PrestasiMahasiswa') }}">Prestasi Mahasiswa</a>
-            <a class="option active-option" href="{{ url('Lomba') }}">Lomba</a>
+            <a class="option active-option" href="{{ url('PKM') }}">PKM</a>
             @auth
                 <a type="button" class="option active-option" data-bs-toggle="modal" data-bs-target="#addPenelitian">Tambah
                     Penelitian</a>
             @endauth
+        </div>
+        <div class="btn-tambah mt-3">
+            <h3 class="w-100">Penelitian</h3>
         </div>
         @if (session('success'))
             <div class="alert alert-success p-1" id="successMessage">
@@ -39,6 +40,7 @@
                 {{ session('error') }}
             </div>
         @endif
+
         <div class="card-container">
             @foreach ($data as $penelitian)
                 <div class="card" style="background-image: url('{{ asset('img/' . $penelitian['ImgPenelitian']) }}');"
@@ -65,7 +67,7 @@
                 {{-- Delete Data --}}
                 <div class="modal fade" id="deleteModal{{ $penelitian->IdPenelitian }}" tabindex="-1" role="dialog"
                     aria-labelledby="deleteModalLabel{{ $penelitian->IdPenelitian }}" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="deleteModalLabel{{ $penelitian->IdPenelitian }}">Konfirmasi
@@ -73,7 +75,7 @@
                                 </h5>
                             </div>
                             <div class="modal-body">
-                                Apakah Anda yakin ingin menghapus kegiatan ini?
+                                Apakah Anda yakin ingin menghapus Penelitian ini?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -90,10 +92,11 @@
                 {{-- Edit Data --}}
                 <div class="modal fade" id="editModal{{ $penelitian->IdPenelitian }}" tabindex="-1" role="dialog"
                     aria-labelledby="editModalLabel{{ $penelitian->IdPenelitian }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $penelitian->IdPenelitian }}">Edit Kegiatan
+                                <h5 class="modal-title" id="editModalLabel{{ $penelitian->IdPenelitian }}">Edit
+                                    Kegiatan
                                 </h5>
                             </div>
                             <form action="{{ route('Penelitian.Update', $penelitian->IdPenelitian) }}" method="POST"
@@ -115,8 +118,8 @@
                                     <div class="mb-3">
                                         <label for="img-kegiatan" class="col-form-label d-flex flex-start">Dokumentasi
                                             Penelitian</label>
-                                        <input class="form-control" type="file" id="img-kegiatan"
-                                            name="ImgPenelitian" accept="image/*">
+                                        <input class="form-control" type="file" id="img-kegiatan" name="ImgPenelitian"
+                                            accept="image/*">
                                         @if ($penelitian->ImgPenelitian)
                                             <div class="mt-2">
                                                 <img src="{{ asset('img/' . $penelitian->ImgPenelitian) }}"
@@ -126,7 +129,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                                 </div>
                             </form>
@@ -140,7 +144,7 @@
         {{-- Tambah Data --}}
         <div class="modal fade" id="addPenelitian" tabindex="-1" aria-labelledby="addPenelitianLabel"
             aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addPenelitianLabel">Tambah Penelitian</h5>
@@ -175,15 +179,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- Alert --}}
-        <div class="popup" id="popup">
-            <img src="{{ asset('img\404-tick.png') }}" alt="">
-            <h2>Sorry!</h2>
-            <p>Fitur yang anda pilih belum tersedia :(</p>
-            <button type="button" onclick="closePopup()">OK</button>
-        </div>
     </div>
     <script src="js/dropdown.js"></script>
-    {{-- @include('Component.Footer') --}}
+    @include('Component.Footer')
 @endsection

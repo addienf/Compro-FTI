@@ -34,7 +34,6 @@
                     Data</a>
             </div>
         @endauth
-
         <div class="container-table">
             <table id="test" class="table table-striped " style="width:100%">
                 <thead>
@@ -73,7 +72,7 @@
                         {{-- Delete Data --}}
                         <div class="modal fade" id="deleteModal{{ $asist->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="deleteModalLabel{{ $asist->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="deleteModalLabel{{ $asist->IdMBKM }}">Konfirmasi
@@ -98,7 +97,7 @@
 
                         <div class="modal fade" id="editModal{{ $asist->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="editModalLabel{{ $asist->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="editModalLabel{{ $asist->IdMBKM }}">Edit Kegiatan
@@ -151,7 +150,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addAsist" tabindex="-1" aria-labelledby="addAsistLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addAsistLabel">Tambah Data Asisten</h5>
@@ -191,4 +190,5 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

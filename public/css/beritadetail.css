@@ -1,0 +1,161 @@
+.jud {
+    max-width: 100vw;
+    height: 150px;
+    background: linear-gradient(to right, #2262B3, #261446);
+    color: #FBFBFB;
+    align-items: center;
+    display: flex;
+}
+
+.jud h1 {
+    margin-left: 50px;
+}
+
+/* Detail */
+.container-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    width: 80%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    line-height: 1cm;
+}
+
+.container p {
+    text-align: justify;
+}
+
+.container .nav {
+    justify-content: left;
+}
+
+.container .nav i {
+    margin: 10px;
+}
+
+.container .nav i a {
+    margin: 10px;
+}
+
+.arahan {
+    margin: 50px;
+}
+
+.container-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-photo img {
+    width: 60vw;
+    height: 60vh;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container p {
+    text-align: justify;
+}
+
+
+.container i {
+    margin: 10px;
+    font-size: 1rem;
+    color: #EB890A;
+}
+
+.container i p {
+    color: black;
+    float: right;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+#person {
+    justify-content: left;
+}
+
+.card-container {
+    width: 1250px;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5em;
+}
+
+.card {
+    display: grid;
+    position: relative;
+    grid-template-columns: auto 1fr;
+    box-shadow: 5px 5px 10px rgba(85, 85, 85, 0.2);
+    margin: 1em 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.card:hover {
+    /* box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    filter: grayscale(1); */
+    transform: scale(1.03);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+    padding: 1em;
+    border-radius: 30px;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #0b0028;
+}
+
+.card-text {
+    color: #6f6f6f;
+    text-align: justify;
+    margin: 0.8em 0 1em 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-view {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    color: #EB890A;
+    width: 9em;
+    text-align: center;
+    padding: 0.3em 0.2em;
+    border-radius: 5px;
+}

@@ -3,32 +3,32 @@
 @section('content')
     @include('Component.Navbar')
     <div class="jud">
-        <h1>Artikel Berita FTI</h1>
+        <h1>Artikel Pengumuman FTI</h1>
     </div>
 
     <div class="container-fluid">
-        <!-- gambar berita -->
+        <!-- gambar Pengumuman -->
         <div class="container-photo">
-            @if ($detail->ImgBerita)
+            @if ($detail->ImgPengumuman)
                 <div class="mt-2">
-                    <img src="{{ asset('img/' . $detail->ImgBerita) }}" alt="Dokumentasi Berita">
+                    <img src="{{ asset('img/' . $detail->ImgPengumuman) }}" alt="Dokumentasi Pengumuman">
                 </div>
             @endif
         </div>
-        <!-- end gambar berita -->
+        <!-- end gambar Pengumuman -->
 
-        <!-- isi berita -->
+        <!-- isi Pengumuman -->
         <div class="container">
             <p>
-                {{ $detail->IsiBerita }}
+                {{ $detail->IsiPengumuman }}
             </p>
         </div>
-        <!-- end isi berita -->
+        <!-- end isi Pengumuman -->
 
-        <!-- detail berita -->
+        <!-- detail Pengumuman -->
         <div class="container mt-3" id="person">
             <i class="fa-regular fa-newspaper">
-                <p>Berita FTI</p>
+                <p>Pengumuman FTI</p>
             </i>
             <i class="fa-solid fa-user">
                 <p>{{ $detail->Penulis }}</p>
@@ -37,34 +37,35 @@
                 <p>{{ $detail->Tanggal }}</p>
             </i>
         </div>
-        <!-- end detail berita -->
+        <!-- end detail Pengumuman -->
 
         <!-- pengumuman -->
 
         <div class="container-fluid">
             <h4>Baca Juga</h4>
             <div class="card-container mt-3">
-                @foreach ($data as $berita)
+                @foreach ($data as $Pengumuman)
                     <div class="card" style="">
-                        <img src="{{ asset('img/' . $berita['ImgBerita']) }}" class="card-img-top" alt="...">
+                        <img src="{{ asset('img/' . $Pengumuman['ImgPengumuman']) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $berita['Judul'] }}</h5>
-                            <h5 class="card-title">{{ $berita['Tanggal'] }}</h5>
+                            <h5 class="card-title">{{ $Pengumuman['Judul'] }}</h5>
+                            <h5 class="card-title">{{ $Pengumuman['Tanggal'] }}</h5>
                             <p class="card-text">
-                                {{ substr($berita['IsiBerita'], 0, 50) }}{{ strlen($berita['IsiBerita']) > 50 ? '...' : '' }}
+                                {{ substr($Pengumuman['IsiPengumuman'], 0, 50) }}{{ strlen($Pengumuman['IsiPengumuman']) > 50 ? '...' : '' }}
                             </p>
                             <div class="d-flex justify-content-between">
                                 {{-- <button type="submit" class="btn-view" data-bs-toggle="modal" data-bs-target=""
-                                    id="beritaButton"
-                                    data-url="{{ url('Berita-d/' . $berita->IdBerita) }}">Selengkapnya</button> --}}
-                                <a href="{{ url('Berita-d/' . $berita->IdBerita) }}" class="btn-view">Selengkapnya</a>
+                                    id="PengumumanButton"
+                                    data-url="{{ url('Pengumuman-d/' . $Pengumuman->IdPengumuman) }}">Selengkapnya</button> --}}
+                                <a href="{{ url('Pengumuman-d/' . $Pengumuman->IdPengumuman) }}"
+                                    class="btn-view">Selengkapnya</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
             <div class="m-5">
-                <a href="{{ url('Berita') }}" class="btn-view px-3 py-2" style="border: 2px solid #252525;">Berita
+                <a href="{{ url('Pengumuman') }}" class="btn-view px-3 py-2" style="border: 2px solid #252525;">Pengumuman
                     Lainya</a>
             </div>
         </div>

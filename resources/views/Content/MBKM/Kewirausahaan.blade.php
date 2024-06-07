@@ -73,7 +73,7 @@
                         {{-- Delete Data --}}
                         <div class="modal fade" id="deleteModal{{ $kwr->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="deleteModalLabel{{ $kwr->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="deleteModalLabel{{ $kwr->IdMBKM }}">Konfirmasi
@@ -98,7 +98,7 @@
 
                         <div class="modal fade" id="editModal{{ $kwr->IdMBKM }}" tabindex="-1" role="dialog"
                             aria-labelledby="editModalLabel{{ $kwr->IdMBKM }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="editModalLabel{{ $kwr->IdMBKM }}">Edit Kegiatan
@@ -157,7 +157,7 @@
         {{-- Modals --}}
         {{-- Tambah Data --}}
         <div class="modal fade" id="addKewirus" tabindex="-1" aria-labelledby="addKewirusLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addKewirusLabel">Tambah Data Kewirausahaan</h5>
@@ -202,4 +202,5 @@
         </div>
     </div>
     <script src="js/dropdown.js"></script>
+    @include('Component.Footer')
 @endsection

@@ -39,7 +39,7 @@ class PenelitianController extends Controller
             'DescPenelitian' => $request->DescPenelitian,
         ]);
 
-        return back()->with('success', 'Kegiatan berhasil ditambahkan.');
+        return redirect('Penelitian')->with('success', 'Kegiatan berhasil ditambahkan.');
     }
 
     public function edit(string $id)
@@ -74,7 +74,7 @@ class PenelitianController extends Controller
                 return redirect()->back()->with('error', 'Gagal menghapus file lama.');
             }
         } else {
-            return redirect()->back()->with('error', 'Tidak ada file yang diunggah atau tidak ada file lama yang ditemukan.');
+            return redirect('Penelitian')->with('error', 'Tidak ada file yang diunggah atau tidak ada file lama yang ditemukan.');
         }
     }
 
@@ -86,6 +86,6 @@ class PenelitianController extends Controller
             unlink(public_path('img') . '/' . $penelitian->ImgPenelitian);
         }
         $penelitian->delete();
-        return redirect()->back()->with('error', 'Kegiatan berhasil dihapus.');
+        return redirect('Penelitian')->with('error', 'Kegiatan berhasil dihapus.');
     }
 }

@@ -109,10 +109,11 @@
                             {{-- Edit Data --}}
                             <div class="modal fade" id="editModal{{ $kj->IdKerjasama }}" tabindex="-1"
                                 aria-labelledby="editModal{{ $kj->IdKerjasama }}Label" aria-hidden="true">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="editModal{{ $kj->IdKerjasama }}Label">Edit Kegiatan
+                                            <h5 class="modal-title" id="editModal{{ $kj->IdKerjasama }}Label">Edit
+                                                Kegiatan
                                             </h5>
                                             <button type="button" class="btn-close" data-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -160,14 +161,16 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="mulai-kerjasama"
-                                                        class="col-form-label d-flex flex-start">Mulai Kerjasama</label>
+                                                        class="col-form-label d-flex flex-start">Mulai
+                                                        Kerjasama</label>
                                                     <input type="date" class="form-control" id="mulai-kerjasama"
                                                         name="Mulai"
                                                         value="{{ date('Y-m-d', strtotime($kj->Mulai)) }}">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="kerjasama-berakhir"
-                                                        class="col-form-label d-flex flex-start">Akhir Kerjasama</label>
+                                                        class="col-form-label d-flex flex-start">Akhir
+                                                        Kerjasama</label>
                                                     <input type="date" class="form-control" id="kerjasama-berakhir"
                                                         name="Berakhir"
                                                         value="{{ date('Y-m-d', strtotime($kj->Berakhir)) }}">
@@ -226,7 +229,7 @@
 
         {{-- Tambah Data --}}
         <div class="modal fade" id="addKjI" tabindex="-1" aria-labelledby="addKjILabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addKjILabel">Tambah Kegiatan</h5>
@@ -290,4 +293,5 @@
             </div>
         </div>
     </div>
+    @include('Component.Footer')
 @endsection
